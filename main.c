@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #include"TADPila.h"
-int main (void)
+
+int main(void)
 {
 int i;
 int l=0;
@@ -9,13 +10,15 @@ int p;
 pila mi_pila;
 elemento a;
 char resp;
+int k=0;
 char expresion[55];
 char salida[150]=" ";
+char letras[27]="///////////////////////////";
+int valores[27];
 printf("teclea una expresion solo letras mayusculas A-Z y las siguientes operaciones +,*,-,/,^ \n");
 scanf("%s",expresion);
 int j=0;
 
-int valores[25];
 Initialize(&mi_pila);
 
 for(i=0;i<strlen(expresion);i++)
@@ -62,6 +65,7 @@ strcat(salida , &a.car);
 p=(int)expresion[l]- 64;
 if(1<=p & p<=26)
 {
+letras[(int)expresion[l]-64]=expresion[l];
 a.car=expresion[l];
 strcat(salida, &a.car);
 }
@@ -123,6 +127,17 @@ strcat(salida, &a.car);
 }
 
 printf("en postfijo es %s\n", salida);
+
+while(k<27)
+{
+if(letras[k]!='/')
+{
+printf("teclea el valor de la letra %c \n" , letras[k]);
+             scanf("%d" , &valores[k]);
+}
+k=k+1;
+}
+
 }
 else
 {
