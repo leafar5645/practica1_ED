@@ -1,8 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include"TADPila.h"
-
-int main(void)
+int main (void)
 {
 int i;
 int l=0;
@@ -70,40 +69,44 @@ if (expresion[l]=='+' || expresion[l]=='-' || expresion[l]=='*'|| expresion[l]==
 {
 if(expresion[l]=='+'||expresion[l]=='-')
 {
-if(Top(&mi_pila).car=='*' || Top(&mi_pila).car=='/' || Top(&mi_pila).car=='^')
+while(Top(&mi_pila).car=='*' || Top(&mi_pila).car=='/' || Top(&mi_pila).car=='^' || Top(&mi_pila).car=='+' || Top(&mi_pila).car=='-')
 {
 a=Pop(&mi_pila);
 
 strcat(salida , &a.car);
-a.car=expresion[l];
-Push(a,&mi_pila);
+
 }
-else
-{
+
     a.car=expresion[l];
 Push(a,&mi_pila);
-}
+
 
 }
 if(expresion[l]=='*'||expresion[l]=='/')
 {
-if(Top(&mi_pila).car=='^')
+while(Top(&mi_pila).car=='^' || Top(&mi_pila).car=='*' || Top(&mi_pila).car=='/')
 {
 a=Pop(&mi_pila);
 
 strcat(salida , &a.car);
-a.car=expresion[l];
-Push(a,&mi_pila);
+
 }
-else
-{
+
     a.car=expresion[l];
 Push(a,&mi_pila);
-}
+
 
 }
 if(expresion[l]=='^')
 {
+while(Top(&mi_pila).car=='^')
+{
+a=Pop(&mi_pila);
+
+strcat(salida , &a.car);
+
+}
+
 a.car=expresion[l];
 Push(a,&mi_pila);
 }
