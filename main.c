@@ -29,16 +29,16 @@ main (void)
   int k = 0;
   int z=0;
 
-  char expresion[150]="";
+  char expresion[150]=""; //Arreglo donde se almacenara la expresion escrita al inicio.
 
   char salida[150] = "";
 
-  char letras[27] = "///////////////////////////";
+  char letras[27] = "///////////////////////////";  //Arreglo donde se almacenan las letras que pueden ingresarse (A-Z).
 
-  int valores[27];
+  int valores[27];  //Arreglo para guardar los valores ingresados para cada letra.
   
   float num1;
-  float resultado;
+  float resultado; //Es la variable para el resultado final de la evaluacion
   float num2;
 
 
@@ -46,21 +46,21 @@ main (void)
 
     ("teclea una expresion solo letras mayusculas A-Z y las siguientes operaciones +,*,-,/,^ \n");
 
-  scanf ("%s", expresion);
+  scanf ("%s", expresion);  //Se trata de una cadena de caracteres.
 
   int j = 0;
 
 
 
-  Initialize (&mi_pila);
+  Initialize (&mi_pila); //Inicializamos la pila creada 
 
 
 
-  for (i = 0; i < strlen (expresion); i++)
+  for (i = 0; i < strlen (expresion); i++)  //Aumentamos el indice del arreglo hasta que sea menor a la cantidad añadida de elementos en la expresion.
 
     {
 
-      if (expresion[i] == '(')
+      if (expresion[i] == '(')  //Solo si es igual a parentesis de entrada, hacemos el push.
 
 {
 
@@ -70,39 +70,39 @@ main (void)
 
 }
 
-      else if (expresion[i] == ')')
+      else if (expresion[i] == ')')   //Si es parentesis de salida, sacamos el parentesis de entrada que se acceso al ùltimo.
+
 
 {
 
-  if (Empty (&mi_pila) != TRUE)
-
-    {
+  if (Empty (&mi_pila) != TRUE) 
+    {      
 
       a = Pop (&mi_pila);
 
     }
 
-  else
+  else          //Si al repetir el proceso, llega un punto donde la pila este vacìa, quiere decir que se agregaron mas par. de salida.
 
     {
 
-      printf
+      printf              
 
 ("\nERROR:\nHay parentesis que intentan cerrar y nunca abrieron: %d",
 
  i);
 
-      return 1;
+      return 1;    //Y regresamos al sistema que hubo un error.
 
     }
 
 }
 
-    }
+    }   //Terminacion del ciclo for (ya terminaron de "cerrarse los parentesis de entrada y salida entre si"). 
 
 
 
-  if (Empty (&mi_pila) == TRUE)
+  if (Empty (&mi_pila) == TRUE)   
 
     {
 
