@@ -22,7 +22,7 @@ main (void)
 
   pila mi_pila;
 
-  elemento a;
+  elemento a; //Nos servirà para almacenar elementos del tope de la pila
 
   char resp;
 
@@ -312,10 +312,10 @@ main (void)
 
 
 Destroy(&mi_pila);
-    }
+    }                  //Terminacion del if en el caso de que se ingresaron los parentesis de forma correcta.
 
 
-  else
+  else                     //Si la pila aùn tenìa elementos, quiere decir que falto cerrar parentesis.
 
     {
 
