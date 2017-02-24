@@ -8,6 +8,7 @@ typedef struct
 {
 int num;
 char car;
+float num2;
 } elemento;
 
 typedef struct
