@@ -4,14 +4,14 @@
 
 typedef char boolean;
 
-typedef struct
+typedef struct elemento
 {
 int num;
 char car;
 float num2;
 } elemento;
 
-typedef struct
+typedef struct pila
 {
 elemento A[MAX_ELEMENT];
 int tope;
