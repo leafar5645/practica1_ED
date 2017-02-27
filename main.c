@@ -404,7 +404,7 @@ z=z+1;
 
 a=Pop(&mi_pila);//sacamos el ultimo valor que quedo en la pila el cual es el resultado//sacamos el ultimo valor que quedo en la pila el cual es el resultado
 resultado=a.num2;
-printf("el resultado de la expresion es %f" , resultado);
+printf("el resultado de la expresion es %f\n" , resultado);
 
 
 
