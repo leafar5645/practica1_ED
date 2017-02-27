@@ -6,6 +6,18 @@
 
 #include<math.h>
 
+float potencia(float num1 , float num2)
+{
+int z=1;
+int resultado=num1;
+while (z<num2)
+{
+resultado=resultado*num1;
+z=z+1;
+}
+return resultado;
+
+}
 
 
 int
@@ -108,11 +120,11 @@ main (void)
 
       printf ("\nEXCELENTE");
 
-      while (l < strlen (expresion))
+      while (l < strlen (expresion))  //si la expresion esta bien la analizaremos completa para separar y reacomodar los componentes
 
 {
 
-  if (expresion[l] == '(')
+  if (expresion[l] == '(')     //si es parentesis que abre lo meteremos a la pila
 
     {
 
@@ -122,7 +134,7 @@ main (void)
 
     }
 
-  if (expresion[l] == ')')
+  if (expresion[l] == ')')    //si es parentesis que cierra sacaremos todo de la pila hasta encontrar un prentesis que abrio y juntaremos todo lo que vamos sacando a la cadena salida con la funcion strcat
 
     {
 
@@ -142,17 +154,17 @@ main (void)
 
     }
 
-  p = (int) expresion[l] - 64;
+  p = (int) expresion[l] - 64;   //el valor ascii de los caracteres menos 64 si es una letra mayuscula A-Z p tendra un valor de 1 a 26
 
-  if (1 <= p & p <= 26)
+  if (1 <= p & p <= 26) //vemos si es una letra
 
     {
 
-      letras[(int) expresion[l] - 64] = expresion[l];
+      letras[(int) expresion[l] - 64] = expresion[l]; //al aparecer un letra la guardamos en el arreglo letras en la posicion de su valor ascii menos 64 para que esten en orden y despues pedir sus valores
 
       a.car = expresion[l];
 
-      strcat (salida, &a.car);
+      strcat (salida, &a.car);//concadenamos la letra
 
     }
 
@@ -160,11 +172,11 @@ main (void)
 
       || expresion[l] == '*' || expresion[l] == '/'
 
-      || expresion[l] == '^')
+      || expresion[l] == '^') //si es un operador veremos las siguientes condiciones
 
     {
 
-      if (expresion[l] == '+' || expresion[l] == '-')
+      if (expresion[l] == '+' || expresion[l] == '-') 
 
 {
 
@@ -176,7 +188,7 @@ main (void)
 
  || Top (&mi_pila).car == '+'
 
- || Top (&mi_pila).car == '-')
+ || Top (&mi_pila).car == '-') //si el operador es + o - menos y en la pila hay operadores de mayor o igual importancia los va a sacr todos
 
     {
 
@@ -184,7 +196,7 @@ main (void)
 
 
 
-      strcat (salida, &a.car);
+      strcat (salida, &a.car);//concatena todo lo que sacamos
 
 
 
@@ -192,7 +204,7 @@ main (void)
 
 
 
-  a.car = expresion[l];
+  a.car = expresion[l];//y guarda en la pila el nuevo operador
 
   Push (a, &mi_pila);
 
@@ -210,7 +222,7 @@ main (void)
 
  || Top (&mi_pila).car == '*'
 
- || Top (&mi_pila).car == '/')
+ || Top (&mi_pila).car == '/') //lo mismo que con la suma pasa con * y / saca los de mayor o igual importancia
 
     {
 
@@ -218,7 +230,7 @@ main (void)
 
 
 
-      strcat (salida, &a.car);
+      strcat (salida, &a.car);//los concatena
 
 
 
@@ -228,7 +240,7 @@ main (void)
 
   a.car = expresion[l];
 
-  Push (a, &mi_pila);
+  Push (a, &mi_pila);//y guarda el nuevo operador
 
 
 
@@ -240,7 +252,7 @@ main (void)
 
 {
 
-  while (Top (&mi_pila).car == '^')
+  while (Top (&mi_pila).car == '^')//y mas de los mismo con potencia
 
     {
 
@@ -266,13 +278,13 @@ main (void)
 
 
 
-  l = l + 1;
+  l = l + 1; //el contador para avanzar en la expresion
 
 }
 
 
 
-      while (Size (&mi_pila) != 0)
+      while (Size (&mi_pila) != 0) //si la pila no esta vacia sacamos y concatenamos todo
 
 {
 
@@ -286,7 +298,7 @@ main (void)
 
 
 
-      printf ("\n en postfijo es %s\n", salida);
+      printf ("\n en postfijo es %s\n", salida); //mostramos la expresion
 
 
 
@@ -294,7 +306,7 @@ main (void)
 
 {
 
-  if (letras[k] != '/')
+  if (letras[k] != '/') // el arreglo letras fue declarado lleno de estas diagonales para identificarlas como vacio  pero las fueron las letras que se tclearon en la pila como se hizo anteriormente ahora recorremos el arreglo buscando cual tiene tiene letra y pedimos su valor
 
     {
 
@@ -329,26 +341,27 @@ Destroy(&mi_pila);
 
 z=0;
 int y=0;
-while(z<strlen(salida)+1) 
+while(z<strlen(salida)+1) //recorreremos la salida para evaluar toda la operacion
 {
-p=(int)salida[y]- 64;
+p=(int)salida[y]- 64;//vemos si es una letra si lo es p va tener valor de 1 a 26
 if(1<=p & p<=26)
 {
 a.num2=valores[p];
-            Push(a, &mi_pila);
+            Push(a, &mi_pila); //guardamos el valor de la letra
 }
 
 
-if (salida[z]=='+' || salida[z]=='-' || salida[z]=='*'|| salida[z]=='/' || salida[z]=='^')
+if (salida[z]=='+' || salida[z]=='-' || salida[z]=='*'|| salida[z]=='/' || salida[z]=='^') //en caso de ser un operador por lo menos debe haber dos numeros en la pila asi que los sacaremos para trabajar con ellos 
+ 
 {
 a=Pop(&mi_pila);
 num2=a.num2;
 a=Pop(&mi_pila);
 num1=a.num2;
-if (salida[z]=='+')
+if (salida[z]=='+') //si es mas la suma de los numeros y asi con las demas
 {
 resultado=num1+num2;
-a.num2=resultado;
+a.num2=resultado;//guardamos el resultado en la pila como otro valor para operar con el en caso de ser necesario
 Push(a , &mi_pila);
 }
 if (salida[z]=='-')
@@ -378,7 +391,7 @@ Push(a , &mi_pila);
 }
 if (salida[z]=='^')
 {
-//resultado=pow(num1,num2);
+resultado=potencia(num1 , num2);
 a.num2=resultado;
 Push(a , &mi_pila);
 }
@@ -389,7 +402,7 @@ z=z+1;
 }
 
 
-a=Pop(&mi_pila);
+a=Pop(&mi_pila);//sacamos el ultimo valor que quedo en la pila el cual es el resultado//sacamos el ultimo valor que quedo en la pila el cual es el resultado
 resultado=a.num2;
 printf("el resultado de la expresion es %f" , resultado);
 
