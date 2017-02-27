@@ -391,7 +391,7 @@ z=z+1;
 
 a=Pop(&mi_pila);
 resultado=a.num2;
-printf("el resultado de la expresion es %f" , resultado);
+printf("el resultado de la expresion es %f\n" , resultado);
 
 
 
