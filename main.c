@@ -196,7 +196,7 @@ main (void)
 
 
 
-      strcat (salida, &a.car);//concatena todo lo que sacamos
+      strcat (salida, &a.car);//concatena todo lo que sacamos, es decir, va colocando en nuestra salida, los elementos que se van sacando de la pila
 
 
 
@@ -252,7 +252,7 @@ main (void)
 
 {
 
-  while (Top (&mi_pila).car == '^')//y mas de los mismo con potencia
+  while (Top (&mi_pila).car == '^')//se realiza el mismo procedimiento con la potencia, que es la operacion de màs jerarquìa.
 
     {
 
@@ -268,9 +268,9 @@ main (void)
 
 
 
-  a.car = expresion[l];
+  a.car = expresion[l];   //Igualamos el elemento del tope con el valor de la expresiòn en el ìndice determinado. 
 
-  Push (a, &mi_pila);
+  Push (a, &mi_pila);  //Metemos a la pila el elemento.
 
 }
 
@@ -298,7 +298,7 @@ main (void)
 
 
 
-      printf ("\n en postfijo es %s\n", salida); //mostramos la expresion
+      printf ("\n La expresion escrita en postfijo es %s\n", salida); //mostramos la expresion
 
 
 
@@ -306,7 +306,7 @@ main (void)
 
 {
 
-  if (letras[k] != '/') // el arreglo letras fue declarado lleno de estas diagonales para identificarlas como vacio  pero las fueron las letras que se tclearon en la pila como se hizo anteriormente ahora recorremos el arreglo buscando cual tiene tiene letra y pedimos su valor
+  if (letras[k] != '/') // el arreglo letras fue declarado lleno de estas diagonales para identificarlas como vacio a las letras no  ingresadas en la pila, ahora recorremos el arreglo buscando cual tiene letra y pedimos su valor
 
     {
 
@@ -358,10 +358,10 @@ a=Pop(&mi_pila);
 num2=a.num2;
 a=Pop(&mi_pila);
 num1=a.num2;
-if (salida[z]=='+') //si es mas la suma de los numeros y asi con las demas
+if (salida[z]=='+') //si es "+",  sumarà los numeros, y asì irà haciendo las demàs operaciones.
 {
 resultado=num1+num2;
-a.num2=resultado;//guardamos el resultado en la pila como otro valor para operar con el en caso de ser necesario
+a.num2=resultado;//guardamos el resultado en la pila como otro valor para operar con el, en caso de ser necesario.
 Push(a , &mi_pila);
 }
 if (salida[z]=='-')
@@ -412,4 +412,3 @@ printf("el resultado de la expresion es %f\n" , resultado);
   return 0;
 
 }
-
