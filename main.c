@@ -47,7 +47,7 @@ main (void)
 
   char letras[27] = "///////////////////////////";  //Arreglo donde se almacenan las letras que pueden ingresarse (A-Z).
 
-  int valores[27];  //Arreglo para guardar los valores ingresados para cada letra.
+  float valores[27];  //Arreglo para guardar los valores ingresados para cada letra.
   
   float num1;
   float resultado; //Es la variable para el resultado final de la evaluacion
@@ -312,7 +312,7 @@ main (void)
 
       printf ("teclea el valor de la letra %c \n", letras[k]);
 
-      scanf ("%d", &valores[k]);
+      scanf ("%f", &valores[k]);
 
     }
 
@@ -384,8 +384,7 @@ Push(a , &mi_pila);
 }
 if (salida[z]=='/')
 {
-num2=1/num2;
-resultado=num1*num2;
+resultado= (float) num1/num2;
 a.num2=resultado;
 Push(a , &mi_pila);
 }
@@ -404,6 +403,7 @@ z=z+1;
 
 a=Pop(&mi_pila);//sacamos el ultimo valor que quedo en la pila el cual es el resultado//sacamos el ultimo valor que quedo en la pila el cual es el resultado
 resultado=a.num2;
+resultado=10/2.5;
 printf("el resultado de la expresion es %f\n" , resultado);
 
 
