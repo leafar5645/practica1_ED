@@ -9,7 +9,7 @@
 float potencia(float num1 , float num2)
 {
 int z=1;
-int resultado=num1;
+float resultado=num1;
 while (z<num2)
 {
 resultado=resultado*num1;
