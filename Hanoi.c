@@ -39,7 +39,7 @@ Hanoi (int ndiscos, int A, int C, int B, int repetHan)
 /*El la funcion pintar, se dibuja a los discos representados por cuadritos, para una mejor comprensión. Al final se mostrara la torre completa simulando que ya se construyo en el palo destino */
 
 void
-pintar (int ndiscos, int A, int C, int B, int repetHan)
+pintar (int ndiscos, int A, int C, int B, int RepetHan)
 {
   int cont, cont2 = 0;
 
