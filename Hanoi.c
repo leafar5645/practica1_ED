@@ -1,7 +1,7 @@
 #include "Hanoi.h"
 /*  Instrucciones: Muestra las operaciones a realizar para mover n discos, de acuerdo a las reglas del juego "Torres de Hanoi":
 - Solo puede mover el disco superior de cualquiera de las astas.
-- Un disco m�s grande nunca puede estar encima de uno m�s peque�o */
+- Un disco más grande nunca puede estar encima de uno más pequeño */
 
 void
 Hanoi (int ndiscos, int A, int C, int B, int repetHan)
@@ -36,7 +36,7 @@ Hanoi (int ndiscos, int A, int C, int B, int repetHan)
 
 }
 
-/*El la funcion pintar, se dibuja a los discos representados por cuadritos, para una mejor comprensi�n. Al final se mostrara la torre completa simulando que ya se construyo en el palo destino */
+/*El la funcion pintar, se dibuja a los discos representados por cuadritos, para una mejor comprensión. Al final se mostrara la torre completa simulando que ya se construyo en el palo destino */
 
 void
 pintar (int ndiscos, int A, int C, int B, int repetHan)
@@ -52,15 +52,16 @@ pintar (int ndiscos, int A, int C, int B, int repetHan)
 	}
       for (cont2 = 0; cont2 < cont; cont2++)
 	{
-	  printf (" ");
-	  printf ("%c", 254);	//Estos espacios acomodan el siguiente asterisco que se pondra separado del anterior
-	  printf (" ");		//Como se ve, el primer asterisco estara 4 espacios despues del margen
+	  printf (" ");    //Los espacios separan los rombitos para que se vean mejor
+	  printf ("%c", 254);	
+	  printf (" ");		
 	  printf ("%c", 254);
 	  while (repetHan > ndiscos)
 	    {
+	   //Si se trata de un disco diferente al primero, se va aumentando su tamaño, esto se relaciona con el numero de repeticiones recursivas (dadas por repetHan)
 	      printf (" ");
-	      printf ("%c", 254);	//Estos espacios acomodan el siguiente asterisco que se pondra separado del anterior
-	      printf (" ");	//Como se ve, el primer asterisco estara 4 espacios despues del margen
+	      printf ("%c", 254);	
+	      printf (" ");	
 	      printf ("%c", 254);
 	      repetHan--;
 	    }
