@@ -61,37 +61,67 @@ imprimir (cajero * cajeros, cola C, cola U, cola P, int n)
 {
 	int i=0;
         int j = 0;
+	elemento x;
+	int o,p,q;
+	o = Size(&P);
+	p = Size(&U);
+	q = Size(&C);
 	while(i<n)
 	{
 		gotoxy((10*i),5);
 		printf("%c%d",(cajeros+i)->e.car,(cajeros+i)->e.num);
 	}
-	i=0;
-	while(i<3)
+	i=1;
+	j=1;
+	while(i<=3)
 	{
-		j=0;
-		while(j<3)
+		while(j<=3)
 		{
 			gotoxy((5*i),(2*j));
-			if(i==1)
+			if(i==1 && o>=j)
 			{
-				printf("%c%d",Element(&P,j));
-				printf("%d",((Size(&P))-3));
+				x=Element(&P,j);
+				printf("%c%d",x.car,x.num);
 			}
-			if(i==2)
+			if(i==2 && p>=j)
 			{
-				printf("%c%d",Element(&U,j));
-				printf("%d",((Size(&U))-3));
+				x=Element(&U,j);
+				printf("%c%d",x.car,x.num);
 			}
-			if(i==3)
+			if(i==3 && q>=j)
 			{
-				printf("%c%d",Element(&C,j));
-				printf("%d",((Size(&C))-3));
+				x=Element(&C,j);
+				printf("%c%d",x.car,x.num);
 			}
-				j++;
+			j++;
 		}
+		gotoxy((5+i),8);
+		if(i=1)
+		{
+			if((o-3)<0)
+				printf("0");
+			else
+				printf("%d",(o-3));
+		}
+		if(i=2)
+		{
+			if((p-3)<0)
+				printf("0");
+			else
+				printf("%d",(p-3));
+		}
+		if(i=3)
+		{
+			if((q-3)<0)
+				printf("0");
+			else
+				printf("%d",(q-3));
+		}
+		i++;
+		j=1;
 
 	}
+
     return;
 }
 
@@ -137,7 +167,6 @@ main ()
 	  c.num = numc;
 	  Queue (&C, c);
 	  numc++;
-          imprimir (cajeros, C, U, P, n);
 	}
       if (tiempo % TIEMPO_USUARIO == 0)
 	{
@@ -145,7 +174,6 @@ main ()
 	  u.num = numu;
 	  Queue (&U, u);
 	  numu++;
-          imprimir (cajeros, C, U, P, n);
 	}
       if (tiempo % TIEMPO_PREFERENTE == 0)
 	{
@@ -153,7 +181,6 @@ main ()
 	  p.num = nump;
 	  Queue (&P, p);
 	  nump++;
-          imprimir (cajeros, C, U, P, n);
 	}
       m = cajeros_libres (cajeros, n);
       if (tiempo % TIEMPO_ATENCION == 0 || m != 0)
@@ -162,30 +189,30 @@ main ()
 	    vaciar_cajeros (cajeros, n);
 	  while (m != 0 && colas_vacias (&C, &U, &P) == 0)
 	    {
-	      if (m != 0 && Empty (&P) == 0 && q != 5)
+	      if (m != 0 && Empty (&P) == '0' && q != 5)
 		{
 		  p = Dequeue (&P);
 		  (cajeros + m - 1)->e = p;
 		}
 	      m = cajeros_libres (cajeros, n);
-	      if (m != 0 && Empty (&P) == 0 && Empty (&U) != 0 && q != 5)
+	      if (m != 0 && Empty (&P) == '0' && Empty (&U) != '0' && q != 5)
 		{
 		  u = Dequeue (&U);
 		  (cajeros + m - 1)->e = u;
 		}
 	      m = cajeros_libres (cajeros, n);
-	      if ((m != 0 && Empty (&C) != 0)
+	      if ((m != 0 && Empty (&C) != '0')
 		  && ((Empty (&U) == 0 && Empty (&P) == 0) || q == 5))
 		{
 		  c = Dequeue (&C);
 		  (cajeros + m - 1)->e = c;
 		}
 	      m = cajeros_libres (cajeros, n);
-	      if (q == 5 || Empty (&C) == 0)
+	      if (q == 5 || Empty (&C) == '0')
 		q = 0;
 	    }
-            imprimir (cajeros, C, U, P, n);
 	}
+      imprimir (cajeros, C, U, P, n);
       tiempo++;
     }
 
