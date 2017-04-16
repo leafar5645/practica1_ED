@@ -110,7 +110,7 @@ main (void)
   int num_caja = 0;			//Valor de la caja en los "arreglos".
   int tiempos[11];	    	//Tiempo de cada caja, la posicion 10 sera para el tiempo en que llegan los clientes.
   int clientes_en_caja[10];		    //Los clientes de las cajas (el numero de caja es la posicion del arreglo)
-  int no_hay_filas = 0;			
+  boolean no_hay_filas = FALSE;			
   int ncajas = 0;		    //Numero de cajas disponibles.
    srand (time (NULL));			
   int clientes_atend = 0;
@@ -149,7 +149,7 @@ main (void)
   /*  -------------------------------------------------------------------------------------- */
 
   //Ciclo principal, con el checamos la condicion de cierre: cierra si se atendio mas de 100 clientes y no hay filas en ninguna caja
-  while ((clientes_atend < 100) || (no_hay_filas == 1))   
+  while ((clientes_atend < 100) || (no_hay_filas == FALSE))   
     {
       Imprimir_en_pantalla(cajas, i, tiempos, tiempo_total, clientes_atend, e, nom_merc);
       usleep (500000);		//Tiempo de pausa entre cada accion, debe darse en milisegundos
@@ -184,12 +184,12 @@ main (void)
 	{
 	  if (Empty (&cajas[i]) == TRUE)	
 	    {
-	      no_hay_filas = 0;
+	      no_hay_filas = TRUE;
 	    }
 	  else
 	    {
-	      no_hay_filas = 1;
-	      i = 20;  
+	      no_hay_filas = FALSE;
+	      i = ncajas+1;  
 		/* El indice se aumenta a un numero cualquiera al que no llegue el numero de cajas, para que se acabe el for,
 		 el cual comprueba que todas las cajas estan vacias */
  	    }
