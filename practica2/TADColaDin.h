@@ -20,7 +20,6 @@ durante la ejecución del programa.
 #include <unistd.h>
 #define TRUE	1
 #define FALSE	0
-#define MAX_ELEMENT 100
 //DEFINICIONES DE TIPOS DE DATO
 
 //Definir un boolean (Se modela con un "char")
