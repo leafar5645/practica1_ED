@@ -14,21 +14,25 @@ durante la ejecución del programa.
 */
 
 //DEFINICIONES DE CONSTANTES
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <unistd.h>
 #define TRUE	1
 #define FALSE	0
+#define MAX_ELEMENT 100
 //DEFINICIONES DE TIPOS DE DATO
 
 //Definir un boolean (Se modela con un "char")
-typedef unsigned char boolean;
+ typedef  char boolean;         //   SOLO PARA LINUX
 
 //Definir un elemento (Se modela con una estructura "elemento")
 typedef struct elemento
 {
-	//Variables de la estructura "elemento" (El usuario puede modificar)
+	char dato[45];
+	int tiempo;
+	int tiempo_total;
 	int n;
-	//***
-	//***
-	//***
 } elemento;
 
 //Definir un nodo que será utilizado para almacenar una posición de la cola (Nodo), lo que incluira a un elemento y a un apuntador al siguiente nodo
