@@ -1,99 +1,99 @@
 #include "Supermercado.h"
-#include "stdlib.h"
+#include <stdlib.h>
 void Imprimir_en_pantalla (cola cajas[10], int i, int tiempos[11], int tiempo_total, int atendidos, elemento e, char nom_merc[100])
 {
       system ("/usr/bin/clear");		//Borra la pantalla. CAMBIA PARA LINUX
-      printf ("\n\t\t\tNombre del Supermercado: %s\t\t\t", nom_merc);	
-      printf ("\n\tRecuerde que cerramos cuando 100 clientes sean atendidos y no haya clientes en espera.\n\n\t\t");
-printf("   ");
+	      printf ("\n\t\t\t\t\tNombre del Supermercado: %s\t\t\t", nom_merc);	
+      printf ("\n\t\tRecuerde que cerramos cuando 100 clientes sean atendidos y no haya clientes en espera.\n\n\t\t\t");
+      printf ("  ");
 	  for (i = 0; i < 10; i++)		//Se imprimer las cajas, esten o no activas
       {
 	printf (" caja %d ", i + 1);
       }
-      printf("\n\nTiempo de atencion: ");
+      printf("\n\nTiempo de atencion:\t");
       for (i = 0; i < 10; i++)
 	{
 		if(tiempos[i]==0)
-		printf ("   --   ");
+		printf ("   --\t");
 		else
-	  printf ("   %d    ", tiempos[i]);
+	  printf ("   %d\t", tiempos[i]);
 	}
 
-      printf ("\n\n\n\nAtendido:\t   ");	
+      printf ("\n\n\n\nAtendido:\t\t");	
       for (i = 0; i < 10; i++)
       {
-      	// A continuacion imprimiremos para cada fila, los clientes en fila, sabiendo que habra si el tamaño de la cola -1 (el atendido), es mayor o igual a lo que se pide.
+      	// A continuacion imprimiremos para cada fila, los clientes en fila, sabiendo que habra si el tamaÃ±o de la cola -1 (el atendido), es mayor o igual a lo que se pide.
 	if (Size (&cajas[i])-1 >= 0)	//Si no esta vacia, se imprime el elemento al frente de la cola, el cual se simula que es el que esta siendo atendido
 	  {
 	    e = Front (&cajas[i]);
-	    printf ("   %d\t  ", e.n);
+	    printf ("   %d\t", e.n);
 	  }
 	  else if(tiempos[i]==0)   //Si la caja esta fuera de servicio, se imprimira una "S" 
-	printf ("   S\t  ");
+	printf ("   S \t");
 	else			//Si no hay clientes formados, se imprimira una "N"
-	  printf ("   N\t  ");
+	  printf ("   N\t");
       }
             //Se imprimen a continuacion, los clientes formados, no atendidos aun
 /* ------------------------------------------------------------------------ */
-      printf ("\n\n\nPrimero en fila:    ");	
+      printf ("\n\n\nPrimero en fila:\t");	
       for (i = 0; i < 10; i++)
 	{
 	  if (Size (&cajas[i])-1 >= 1)
 	    {
 	      e = Element (&cajas[i], 2);  //Se imprime el elemento en la posicion dada, de la caja ingresada (posicion del arreglo de cajas)
-	      printf ("  %d\t   ", e.n);
+	      printf ("   %d\t", e.n);
 	    }
 	  else if(tiempos[i]==0)
-	printf ("  S\t   ");
+	printf ("   S \t");
 	  else
-	    printf ("  N\t   ");
+	    printf ("   N\t");
 	}
 
-      printf ("\n\nSegundo en fila:    ");
+      printf ("\n\nSegundo en fila:\t");
       for (i = 0; i < 10; i++)	
 	{
 	  if (Size (&cajas[i])-1 >= 2)
 	    {
 	      e = Element (&cajas[i], 3);
-	      printf ("  %d\t   ", e.n);
+	      printf ("   %d\t", e.n);
 	    }
 	    else if(tiempos[i]==0)
-	printf ("  S\t   ");
+	printf ("   S \t");
 	  else
-	    printf ("  N\t   ");
+	    printf ("   N\t");
 	}
 
-      printf ("\n\nTercero en fila:    ");
+      printf ("\n\nTercero en fila:\t");
       for (i = 0; i < 10; i++)
 	{
 	  if (Size (&cajas[i]) -1 >= 3)
 	    {
 	      e = Element (&cajas[i], 4);
-	      printf ("  %d \t   ", e.n);
+	      printf ("   %d\t", e.n);
 	    }
 	  else if(tiempos[i]==0)
-	printf ("  S\t   ");
+	printf ("   S \t");
 	  else
-	    printf ("  N\t   ");
+	    printf ("   N\t");
 	}
 
     /* ------------------------------------------------------------------------ */
     
-      printf ("\n\n\nTamano de fila:\t  ");	//Imprime el tamaño de la fila, los clientes  no atendidos aun
+      printf ("\n\n\nTamano de fila:\t\t");	//Imprime el tamaÃ±o de la fila, los clientes  no atendidos aun
       for (i = 0; i < 10; i++)
 	{
 		if(tiempos[i]==0)
-		printf ("   --\t  ");
+		printf ("   --\t");
 		else if (Size (&cajas[i]) >0)
 	    {
- printf ("   %d\t", Size (&cajas[i])-1);
+ printf ("    %d\t", Size (&cajas[i])-1);
 	    }
 	    else
-	  printf ("   %d\t  ", Size (&cajas[i]));
+	  printf ("   %d\t", Size (&cajas[i]));
 	}
       printf("\n\n\nLas personas llegan cada %d segundos", tiempos[10]);
-      printf ("\n\n  TIEMPO: %d segundos", tiempo_total);	//Imprime el tiempo que lleva la simulacion.
-      printf ("\t\t Numero de clientes atendidos en total:  %d \n", atendidos);	//Imprime el numero total de clientes atendidos.
+      printf ("\n  TIEMPO: %d segundos", tiempo_total);	//Imprime el tiempo que lleva la simulacion.
+      printf ("\t\t  Numero de clientes atendidos en total:\t  %d", atendidos);	//Imprime el numero total de clientes atendidos.
 }
 
 
