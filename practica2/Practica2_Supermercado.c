@@ -1,4 +1,6 @@
-#include "Supermercado.h"
+#include "TADColaEst.h"
+//#include "TADColaEstCirc.h"
+//#include "TADColaDin.h"
 #include <stdlib.h>
 void Imprimir_en_pantalla (cola cajas[10], int i, int tiempos[11], int tiempo_total, int atendidos, elemento e, char nom_merc[100])
 {
