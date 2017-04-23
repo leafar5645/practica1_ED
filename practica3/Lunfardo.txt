@@ -515,7 +515,7 @@ Carucha: Cara.
 Casa del Pueblo: Cementerio.
 Casatero: Cumnilinguo.
 Cascada: Zurra, paliza.
-Cascar. Castigar, pegar
+Cascar: Castigar, pegar
 Cáscara: Aspaviento.
 Cascarazo: Bofetada.
 Cascarria: Trompo viejo, ya inservible.
@@ -1084,7 +1084,7 @@ Fayutear: Engañar.
 Fayuto o falluto: Desleal, falso o falsificador / Ordinario, mala calidad.
 Feba: Mujer.
 Feca: Café
-Feites. Tajos en la cara, cortadas, charrasquinadas
+Feites: Tajos en la cara, cortadas, charrasquinadas
 Felpa: Zurra.
 Felpeada: Zurra, reprimenda.
 Felpear: Zurrar / Reprender.
@@ -1358,7 +1358,7 @@ Joderse: Perjudicarse.
 Jodido: Achacoso, deteriorado / Maligno.
 Jodón: Burlón.
 Jonca: Ataúd
-Jovato. Viejo
+Jovato: Viejo
 Jugado: Achacoso.
 Jugarse: Arrojarse, intervenir.
 Juiciosa, la: Cárcel.
@@ -1483,7 +1483,7 @@ Malandra / malandraca: Delincuente. Mal viviente en general.
 Malandrinaje: Delincuencia en general.
 Malandrino: Delincuente.
 Malanfear: Comer / Defraudar, estafar.
-Malanfiar. Comer
+Malanfiar: Comer
 Malanfio: Asunto, hecho dudoso.
 Malario: Infortunio.
 Malerba: Ordinaria.
@@ -1791,7 +1791,7 @@ Popa: Asentadores.
 Posta: Magnifica
 Primus: Calentador de mesa a Kerosén.
 Prisé: Pulgarada de cocaína.
-Prontuario. Record, historia, archivo
+Prontuario: Record, historia, archivo
 Púa: Astuto, sagaz, piola.
 Pucho: Colilla
 Punga: Ladrón
@@ -2223,3 +2223,4 @@ Zaranda: Zurra.
 Zarpar: Irse rápido.
 Zumbarse: Drogarse.
 Zurdo: el corazón. 
+^

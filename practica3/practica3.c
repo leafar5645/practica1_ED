@@ -233,7 +233,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			while(p != NULL) //mientras la direccion sea valida haremos lo siguiente
 			{
 				
-			b=Position(&diccionario[n] , p); sacamos el elemento de la posicion p 
+			b=Position(&diccionario[n] , p); //sacamos el elemento de la posicion p 
 			if (strcmp(a.palabra,b.palabra) == 0) //verificamos que no sea igual a la palabra que queremos meter, porque no debe haber palabras repetidas
 			{
 			printf("la palabra ya existe ");
@@ -241,7 +241,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			 printf("El numero de campos vacios en la tabla es %d  " , vacio);
 		
 		  
-				Sleep(200);
+				Sleep(50);
 				
 				p=0;//declaramos p null para salir del while
 			}
@@ -262,7 +262,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 				vacio=status_tab(tabla);
 		printf("El numero de campos vacios en la tabla es %d  " , vacio);
 				printf("El hash de la palabra es : %d  y la palabra :  %s \n " , n, palabra);
-				Sleep(200);
+				Sleep(50);
 				}
 				memset(b.palabra, 0, 50);
 			}
@@ -280,7 +280,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 		printf("El numero de campos vacios en la tabla es %d  " , vacio);
 			
 			printf("El hash de la palabra es : %d  y la palabra :  %s \n " , n, palabra);
-				Sleep(200);
+				Sleep(50);
 		}
 			
 		memset(string, 0, 350);
