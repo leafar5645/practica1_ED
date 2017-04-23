@@ -1,0 +1,6 @@
+Ún:nada -38
+Ór:nada -45
+Ín:nada  -51
+Ét:nada   -55
+Ár:nada     -63
+^
