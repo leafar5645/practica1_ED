@@ -7,6 +7,32 @@
 #include <locale.h>
 
 int colisiones;  //contador de colisiones
+void ptab(int tabla[97])
+{
+	int n=0;
+	while(n<97)
+	{
+		printf("    %d", tabla[n]);
+		n=n+1;
+	}
+}
+int maxo(int tabla[97])
+{
+	int mayor =tabla[0];
+	int n=0;
+	int aux=0;
+	while(n<97)
+	{
+		aux=tabla[n];
+		if (aux>mayor)
+		{
+			mayor=aux;
+		}
+		n=n+1;
+	}
+	return mayor;
+	
+}
 void acentos (char palabra[50])  //funcion para guardar y buscar las palabras con acento
 {
 	int n=0;
@@ -176,24 +202,30 @@ int main (void)
 	boolean t;
 	char valor;
 	int vacio=0;
-    int salir=0;	
+    int salir=0;
+int ordenB=0;	
 	int n=0;
 	char aux='n';
 	char archivo[50];
 	FILE * dic; //declarando un archivo
+	FILE * Expor;
 	int opcion=0;
 	char definicion[300];
-	char string[350]=""; //la cadena que va almacenar lo que sacamos del archivo
+	unsigned char string[350]=""; //la cadena que va almacenar lo que sacamos del archivo
 	posicion p ; 
 	posicion p2;
     posicion p3;
 	while(salir != 1) //mientras salir no sea igual a 1 seguiremos en el programa
 	{
+	 vacio=status_tab(tabla);
+     ordenB=maxo(tabla);//esto es lo del orden maximo de busqueda	
+     ordenB=ordenB+1;	
+     ptab(tabla);	 
 	printf("bienvenido al diccionario \n ");
 	printf("tecle el numero de la opcion mas conveniente para usted                                       El numero de colisiones en la tabla es: %d  \n ", colisiones);
-	printf("1 Cargar archivo de definiciones \n ");
-    printf("2 Agregar una palabra y su definicion \n ");
-    printf("3 Buscar una palabra y su definicion \n ");
+	printf("1 Cargar archivo de definiciones                                                              El orden maximo de busqueda es de : %d      \n ", ordenB);
+    printf("2 Agregar una palabra y su definicion                                                         El numero de campos vacio en la tabla es: %d \n ", vacio);
+    printf("3 Buscar una palabra y su definicion                                                          El tamaño de la tabla es de 97 \n ");
     printf("4 Modificar una definicion  \n ");
     printf("5 Eliminar una palabra \n ");
     printf("6  salir \n ");	
@@ -203,7 +235,7 @@ if(opcion==1)
 {	
 memset(archivo, 0, 50); //limpiamos la variable archivo que llevara el nombre del archivo
 fflush( stdin ); //limpiamos para que no venga basura 
-	printf("Tecle el nombre del archivo");
+	printf("Tecle el nombre del archivo \n");
 	gets(archivo);
 	fflush( stdin );
 
@@ -233,15 +265,15 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			while(p != NULL) //mientras la direccion sea valida haremos lo siguiente
 			{
 				
-			b=Position(&diccionario[n] , p); //sacamos el elemento de la posicion p 
+			b=Position(&diccionario[n] , p);// sacamos el elemento de la posicion p 
 			if (strcmp(a.palabra,b.palabra) == 0) //verificamos que no sea igual a la palabra que queremos meter, porque no debe haber palabras repetidas
 			{
 			printf("la palabra ya existe ");
 			vacio=status_tab(tabla);
-			 printf("El numero de campos vacios en la tabla es %d  " , vacio);
+			 printf("El numero de campos vacios en la tabla es %d \n " , vacio);
 		
 		  
-				Sleep(50);
+				Sleep(200);
 				
 				p=0;//declaramos p null para salir del while
 			}
@@ -262,7 +294,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 				vacio=status_tab(tabla);
 		printf("El numero de campos vacios en la tabla es %d  " , vacio);
 				printf("El hash de la palabra es : %d  y la palabra :  %s \n " , n, palabra);
-				Sleep(50);
+				Sleep(200);
 				}
 				memset(b.palabra, 0, 50);
 			}
@@ -280,7 +312,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 		printf("El numero de campos vacios en la tabla es %d  " , vacio);
 			
 			printf("El hash de la palabra es : %d  y la palabra :  %s \n " , n, palabra);
-				Sleep(50);
+				Sleep(200);
 		}
 			
 		memset(string, 0, 350);
@@ -289,6 +321,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 		memset(a.definicion, 0, 300);
 		memset(definicion, 0, 300);//limpiamos el buffer para no mandar cosas demas
  	}
+	fclose(dic);
 		memset(string, 0, 350);
 		memset(palabra, 0, 50);
 		memset(a.palabra, 0, 50);
@@ -296,6 +329,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 		memset(definicion, 0, 300);//limpiamos el buffer para no mandar cosas demas
 		
 }
+
 
 	if(opcion== 2) // esta funcion es practicamente lo mismo que la anterior excepto sin while del archivo ya que aqui solo se imserta una palabra
 	{
@@ -311,7 +345,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 	strcpy(a.palabra , palabra);
 	strcpy(a.definicion , definicion);
 	
-	if(tabla[n] != 0) //verificamos si  no es la primera palabra con ese hash
+	if(tabla[n] != -1) //verificamos si  no es la primera palabra con ese hash
 		{
 			
 			 p=First(&diccionario[n]);
@@ -363,7 +397,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			   	printf("El hash de la palanra es : %d  \n " , n);
 			   //printf("El numero de colisiones es: %d " , colisiones);
 				Sleep(1500);
-		colisiones=colisiones +1;
+		
 		}
 		
 		memset(string, 0, 300);
@@ -568,9 +602,13 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 	if(opcion==6)
 	{
 	salir=1;// salir lo igualamos a 1 para poder salir del while 
+	}
+	
+
+
 	
 	
-}
+
 BorrarPantalla();
    }
    printf("adios \n");
