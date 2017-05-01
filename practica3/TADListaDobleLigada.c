@@ -47,8 +47,9 @@ void Initialize(lista *l)
 	l->frente = NULL;
 	l -> final = NULL;
 	l->tam = 0;
+	l->ini=-1;
 	return;
-	setlocale(LC_ALL , "Spanish");
+
 }
 
 /*
@@ -72,7 +73,7 @@ void Destroy(lista *l)
 	}
 	//Inicializar la lista
 	Initialize(l);
-	setlocale(LC_ALL , "Spanish");
+
 }
 
 /***************************************************
@@ -89,7 +90,7 @@ si esto no ha pasado se ocasionara un error.
 */
 posicion Final(lista *l)
 {
-	setlocale(LC_ALL , "Spanish");
+
 	return l->final;
 	
 }
@@ -105,7 +106,6 @@ si esto no ha pasado se ocasionara un error.
 */
 posicion First(lista *l)
 {
-	setlocale(LC_ALL , "Spanish");
 	return l->frente;
 }
 
@@ -119,7 +119,7 @@ Observaciones: El usuario a creado una lista y l tiene la referencia a ella, p e
 */
 posicion Following(lista *l, posicion p)
 {
-	setlocale(LC_ALL , "Spanish");
+
 	if(ValidatePosition(l,p))
 	{
 		return p->atras;
@@ -194,7 +194,7 @@ Observaciones: La lista L es no vacía y la posición P es una posición valida.
 */
 elemento Position(lista *l, posicion p)
 {
-	setlocale(LC_ALL , "Spanish");
+
 	if(ValidatePosition(l,p))
 	{
 		return p->e;
@@ -215,7 +215,7 @@ Observaciones:
 */
 boolean ValidatePosition(lista *l, posicion p)
 {
-	setlocale(LC_ALL , "Spanish");
+	
 	boolean r = FALSE;
 	posicion aux;
 	aux = l->frente;
@@ -290,7 +290,12 @@ Observaciones: El usuario a creado una lista,la lista fue correctamente iniciali
 */
 int Size(lista *l)
 {
+	if(l->ini==-1)
+	{
 	return l->tam;
+	}
+	else
+		return 0;
 }
 
 boolean Empty(lista *l)
@@ -355,7 +360,7 @@ void Insert(lista *l, elemento e, posicion p,boolean b)
 
 void Add(lista *l,elemento e)
 {
-	setlocale(LC_ALL , "Spanish");
+	
 	posicion aux;
 	aux = malloc(sizeof(nodo));
 	if (aux==NULL)
@@ -377,7 +382,7 @@ void Add(lista *l,elemento e)
 
 void Remove(lista *l,posicion p)
 {	
-setlocale(LC_ALL , "Spanish");
+
 	if(ValidatePosition(l,p))
 	{
 		posicion adelante_p, atras_p;
@@ -410,7 +415,7 @@ setlocale(LC_ALL , "Spanish");
 
 void Replace(lista *l,posicion p, elemento e)
 {
-	setlocale(LC_ALL , "Spanish");
+
 	if(ValidatePosition(l,p))
 	{
 		p->e=e;

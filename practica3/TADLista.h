@@ -20,8 +20,8 @@ EL CODIGO QUE IMPLEMENTA LAS FUNCIONES ES EL ARCHIVO: TADLista.c
 //Estructura elemento (Modificable por el usuario)
 typedef struct elemento
 {
-	char palabra[50];
-	char definicion[300];
+	unsigned char palabra[50];
+	char definicion[500];
 	int valor;
 }elemento;
 
@@ -43,6 +43,7 @@ typedef struct lista
 	nodo *frente;
 	nodo *final;
 	int tam;
+	int ini;
 }lista;
 
 //Definición de una posición
