@@ -32,7 +32,10 @@ Hanoi (int ndiscos, int A, int C, int B, int repetHan)  //Funciòn que hace la o
 	      ndiscos);
 //Indica cambio, ahora con el palo 1 (A) como origen y el palo 2 (auxiliar/B) como el destino. A continuacion se pega en pantalla el disco a moverse.      
 
-      pintar (repetHan + 1, A, B, C, repetHan + ndiscos);
+      pintar (repetHan + 1, A, B, C, repetHan + ndiscos); 
+      /*repetHan es màs grande a numero de discos, en el caso de tener discos de posiciòn 
+      inicial/tamaño diferente a 1, por ejemplo para 2 discos, repetHan tendrìa que ser =3 y ndiscos=2, lo cual se consigue haciendo 
+      la suma establecida en la sentencia anterior para todo repetHan y ndiscos*/
 
       Hanoi (ndiscos - 1, B, C, A, repetHan);
 //Ultimo pase de discos, con palo 2 (B) como origen, palo 3 (C) como destino. 
