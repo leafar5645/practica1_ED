@@ -7,32 +7,8 @@
 #include <locale.h>
 
 int colisiones;  //contador de colisiones
-void ptab(int tabla[97])
-{
-	int n=0;
-	while(n<97)
-	{
-		printf("    %d", tabla[n]);
-		n=n+1;
-	}
-}
-int maxo(int tabla[97])
-{
-	int mayor =tabla[0];
-	int n=0;
-	int aux=0;
-	while(n<97)
-	{
-		aux=tabla[n];
-		if (aux>mayor)
-		{
-			mayor=aux;
-		}
-		n=n+1;
-	}
-	return mayor;
-	
-}
+
+
 void acentos (char palabra[50])  //funcion para guardar y buscar las palabras con acento
 {
 	int n=0;
@@ -189,37 +165,36 @@ resul=resul%97;
 int main (void)
 
 {
-	lista diccionario[97]; //la tabla hash de tamaño 97
+	lista diccionario[97]; //El arreglo de listas que es igual al tamaño de la tabla 
 	
 
-    char  unsigned palabra[50];
+    char  unsigned palabra[50]; //la variable para palabras
 	
-     int tabla[97];
-	rellenar(tabla); //rellenamos la tabla
+     int tabla[97];// la tabla hash
+	rellenar(tabla); //rellenamos la tabla con -1
     int hash=0;	
-	elemento a;
+	elemento a; //elementos con los que obtendremos, meteremos y compararemos palabras
 	elemento b;
 	boolean t;
-	char valor;
-	int vacio=0;
-    int salir=0;
-    int orden=0;
-    int pasos=0;	
-	int n=0;
-	int auxo=0;
-	int k=0;
-	int z=0;
-	char aux='n';
-	char archivo[50];
+    char valor;  // variable para guardar carateres de un archivo hasta encontrar el carater ^ que significa el fin del archivo 
+	int vacio=0; //variable para llevar el numero de espacio vacios en la tabla 
+    int salir=0;  //variable que controlora la salida del programa 
+    int orden=0; // variable para guardar el orden de busqueda mayor
+    int pasos=0;	// variable para contar el numero de pasos en una operacion 
+	int n=0;      //varibale que funcionara como contador , hash , indices de lista y tabla 
+	int auxo=0;   // variable auxiliar 
+	int k=0;         //lo mismo que la variable n
+ 	int z=0;            // lo mismo que n y k
+	char aux='n';     // variable para confirmar eliminacion de una palabra 
+	char archivo[50];    // variable para guardar el nombre del archivo 
 	FILE * dic; //declarando un archivo
-	FILE * Expor;
-	int opcion=0;
-	char definicion[500];
+	int opcion=0; // variable para acceder a la funcion deseada del programa 
+	char definicion[500]; // variable para guardar definiciones de palabras 
 	unsigned char string[500]=""; //la cadena que va almacenar lo que sacamos del archivo
-	posicion p ; 
-	posicion p2;
+	posicion p ; //posiciones para realizar las busquedas y comparaciones
+	posicion p2; // lo mismo 
     posicion p3;
-	while(z<97)
+	while(z<97) //inicializaremos todas las listas solo para poder obtener su tamaño aunque no tengan letras
 	{
 		Initialize(&diccionario[z]);
 		z=z+1;
@@ -228,7 +203,7 @@ int main (void)
 	while(salir != 1) //mientras salir no sea igual a 1 seguiremos en el programa
 	{
 		
-		while(z<97)
+		while(z<97) // proceso para obtener el orden de busqueda mayor 
 		{
 			
 		if(Empty(&diccionario[z])== FALSE)
@@ -246,7 +221,7 @@ int main (void)
 		z=z+1;
 		}
 		z=0;
-	 vacio=status_tab(tabla);
+	 vacio=status_tab(tabla); //obtener el numero de campos vacios
   	 
 	printf("bienvenido al diccionario \n ");
 	printf("tecle el numero de la opcion mas conveniente para usted                                       El numero de colisiones en la tabla es: %d  \n ", colisiones);
@@ -273,7 +248,7 @@ fflush( stdin ); //limpiamos para que no venga basura
 while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar este simbolo
  	{
 		
- 		fgets(string,500,dic); //tomar toda una linea del archivo con un maximo de 350 carateres
+ 		fgets(string,500,dic); //tomar toda una linea del archivo con un maximo de 500 carateres
  		
 		separacion( string , palabra , definicion , valor); //vamos a dividir la cadena que obtuvimos en 2 la palabra y la definicion mandamos valor porque al evaluar si no este simbolo ^ el cursor de mueve en uno y perdemos el primer caracter 
 		acentos(palabra);
@@ -300,7 +275,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			 printf("letras en el hash %d \n " , tabla[n]);
 		
 		  
-				Sleep(200);
+				Sleep(50);
 				
 				p=0;//declaramos p null para salir del while
 			}
@@ -321,7 +296,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 				vacio=status_tab(tabla);
 				printf("letras en el hash %d \n " , tabla[k]);
 				printf("El hash de la palabra es : %d  y la palabra :  %s \n " , k, palabra);
-				Sleep(200);
+				Sleep(50);
 				}
 				memset(b.palabra, 0, 50);
 			}
@@ -339,7 +314,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 		 printf("letras en el hash %d \n " , tabla[k]);
 			
 			printf("El hash de la palabra es : %d  y la palabra :  %s \n " , k, palabra);
-				Sleep(200);
+				Sleep(50);
 		}
 			
 		memset(string, 0, 500);
@@ -387,7 +362,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			vacio=status_tab(tabla);
 		printf("El numero de campos vacios en la tabla es %d  " , vacio);
 			printf("El hash de la palabra es : %d  \n  " , n);
-			Sleep(1500);
+			Sleep(1000);
 				
 				//tabla[n]=tabla[n] -1;
 				p=0;//declaramos p null para salir del while
@@ -453,7 +428,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 	{
 		printf("la palabra no existe");
 		printf("El numero de pasos en la operacion es: %d \n ", pasos);
-				Sleep(1500);
+				Sleep(1000);
 	}
 	else //si no repetimos el mismo proceso que en las opciones anteriores buscamos la palabra 
 	{
@@ -484,7 +459,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 					printf("El hash de la palabra es : %d   " , n);
 					pasos=pasos+1;
 				printf("El numero de pasos en la operacion es: %d \n ", pasos);
-				Sleep(1500);
+				Sleep(1000);
 				}
 				memset(b.palabra, 0, 50);
 			}
@@ -507,11 +482,11 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 	pasos=1;
 	if(tabla[n] <0)
 	{
-			printf("El hash de la palanra es : %d  \n " , n);
+			printf("El hash de la palabra es : %d  \n " , n);
 		printf("la palabra no existe");
 		printf("El numero de pasos en la operacion es: %d \n ", pasos);
 		
-				Sleep(1500);
+				Sleep(1000);
 	}
 	else
 	{
@@ -535,7 +510,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 				pasos=pasos+1;
 				printf("El numero de pasos en la operacion es: %d \n ", pasos);
 				
-				Sleep(1500);
+				Sleep(1000);
 				p=0;//declaramos p null para salir del while
 			}
 			else
@@ -548,7 +523,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 				printf("la palabra no existe");
 				printf("El numero de pasos en la operacion es: %d \n ", pasos);
 				
-				Sleep(1500);
+				Sleep(1000);
 				}
 				memset(b.palabra, 0, 50);
 			}
