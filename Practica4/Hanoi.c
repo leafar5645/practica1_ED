@@ -15,32 +15,37 @@ Hanoi (int ndiscos, int A, int C, int B, int repetHan)  //Funciòn que hace la o
       printf (" Mueve del Palo %d a Palo %d, al disco (%d):\n", A, C,
 	      ndiscos);
 
-      pintar (ndiscos, A, C, B, repetHan);  //Se imprime el disco a moverse y el final, la torre formada en el destino.
+      pintar (ndiscos, A, C, B, repetHan); //Se imprime el disco a moverse, este es el caso base no recursivo, CUANDO SE MUEVE EL DISCO 1
       repetHan++;   
      /*Recordemos que "repetHan" sirve para conocer el nùmero de veces que se ha llegado al caso base no recursivo tras una 
-     serie de operaciones (cuando se mueve 1 palo al destino propuesto), entonces guarda el nùmero de movimientos 
-     (cambios de palo/nùmero de disco) o llamadas recursivas. Asì, por ejemplo para ndiscos =3, se necesitan hacer 6 movimientos, 
-     osea 6 llamadas a Hanoi, por lo que repeHan=6. */
+     serie de operaciones recursivas, lo cuàl serà util tomar en cuenta y comparar con el nùmero de discos, esto para pintar el disco a
+     moverse en una parte del procedimiento determinada. Se busca que esta variable nos indique con que disco estamos trabajando*/
     }
-  //Si existen màs de un disco, debes seguir una serie de pasos para lograr el objetivo del juego
+  //Si existen màs de un disco, debes seguir una serie de pasos recursivos para lograr el objetivo del juego
   else
     {
-   //para hacer la llamada recursiva de continuaciòn, se requiere que 
-      Hanoi (ndiscos - 1, A, B, C, repetHan);  //ahora, se hace una llamada recursiva, pero esta vez el palo definido como "auxiliar" pasarà a ser el palo "destino" 
+  
+      Hanoi (ndiscos - 1, A, B, C, repetHan);  //ahora, se hace una llamada recursiva, pero esta vez el palo definido como "auxiliar" pasarà a ser el palo "destino", el disco a tratar cambiarà.
 
       printf (" Mueve del Palo %d a Palo %d, al disco (%d):\n", A, C,
 	      ndiscos);
-//Indica cambio, ahora con el palo 1 (A) como origen y el palo 2 (auxiliar/B) como el destino. A continuacion se pega en pantalla el disco a moverse.      
+//Una vez hecha la llamada recursiva anterior, ahora el palo 1 (A) serà origen y el palo 2 (auxiliar/B),  el destino. A continuacion se pega en pantalla el disco a moverse.      
 
       pintar (repetHan + 1, A, B, C, repetHan + ndiscos); 
-      /*repetHan es màs grande a numero de discos, en el caso de tener discos de posiciòn 
-      inicial/tamaño diferente a 1, por ejemplo para 2 discos, repetHan tendrìa que ser =3 y ndiscos=2, lo cual se consigue haciendo 
-      la suma establecida en la sentencia anterior para todo repetHan y ndiscos*/
+      /*repetHan es màs grande a nùmero de discos, en el caso de tener discos de posiciòn 
+      inicial/tamaño diferente a 1. Se buscò la forma de que el repetHan nos indicarà con que no. de disco trabajamos,
+      relacionàndolo con el ndiscos con el fin de que al momento de imprimir, se muestre el tamaño correcto del disco trabajado.
+      en este caso, se obtuvo mediante pruebas, que si ndiscos= repetHan + 1, y repetHan = repetHan+ndiscos, en està secciòn 
+      de còdigo, podremos obtener lo deseado. */
+      
+     /*Por ejemplo, si ndiscos originalmente es 3, repetHan serìa 4, y al momento de pintar repetHan tendrìa que ser 7 y ndiscos 5, 
+     pues la diferencia entre ambos debe ser 2, pues esta seria la cantidad de veces que se le agregarìa cuadritos al disco de tamaño 1*/
 
       Hanoi (ndiscos - 1, B, C, A, repetHan);
-//Ultimo pase de discos, con palo 2 (B) como origen, palo 3 (C) como destino. 
-/* La funcion se creo a base de 2 palos, conociendo la forma en la que se modifican los "destinos" y "auxiliares". Sin embargo, puede funcionar
-recursivamente para cualquier nùmero de discos, puesto que al final de todo, podrìamos decir que los procedimientos se van reduciendo hasta que se tiene la misma operacion con 2 palos en torre, y posteriormente con uno sòlo. */
+//Ultimo pase de discos, con palo 2 (B) como origen, palo 3 (C) como destino. RepetHan y ndiscos actùan sin cambios ya que se sabe que trabajamos con el disco menor, lo cual no altera dichas variables 
+/* La funciòn se creò a base de 2 palos, conociendo la forma en la que se modifican los "destinos" y "auxiliares". Sin embargo, puede funcionar
+recursivamente para cualquier nùmero de discos, puesto que al final de todo, podrìamos decir que los procedimientos se van reduciendo hasta que 
+se tiene la misma operacion con 2 palos en torre, y posteriormente con uno sòlo. */
 
     }
 
@@ -68,13 +73,8 @@ pintar (int ndiscos, int A, int C, int B, int RepetHan)
 	  printf ("%c", 254);
 	  while (repetHan > ndiscos)
 	    {
-	   /*Si se pidiò hacer màs movimientos o llamadas con recursividad que el nùmero de discos, se va aumentando el tamaño "gràfico" 
-	   del disco, este bloque de instrucciones servirà para aumentar el tamaño horizontal del disco solicitado, recordando que 
-	   dicho tamaño, por definiciòn del juego, aumenta en 1 unidad conforme bajamos en la torre de hanoi (los discos de abajo deben
-	   ser de mayor tamaño que los de arriba) */
-		  /* Un ejemplo es, en el momento en el que se mueva al disco de posiciòn inicial 3 (tamaño 3), el repetHan =6, puesto 
-		  que se requiere hacer 6 movimientos de discos o repeticiones de la funciòn Hanoi para resolver el juego, y ndiscos=3, 
-		  por lo que se imprimiran 4 cuadritos màs a parte de nuestros 2 cuadritos iniciales (para disco de tamaño 1)*/
+	  /*Esta secciòn se explicaba arriba con un ejemplo, bàsicamente la diferencia entre repetHan y ndiscos nos indicarà las veces
+	  que le añadiremos "2 cuadritos" a nuestro disco original de cada fila de la torre, esto por que cada disco es de diferente tamaño*/
 	      printf (" ");
 	      printf ("%c", 254);	
 	      printf (" ");	
