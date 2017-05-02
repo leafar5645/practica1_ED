@@ -219,10 +219,18 @@ int main (void)
 	posicion p ; 
 	posicion p2;
     posicion p3;
+	while(z<97)
+	{
+		Initialize(&diccionario[z]);
+		z=z+1;
+	}
+	z=0;
 	while(salir != 1) //mientras salir no sea igual a 1 seguiremos en el programa
 	{
+		
 		while(z<97)
 		{
+			
 		if(Empty(&diccionario[z])== FALSE)
 		{
 			

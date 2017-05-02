@@ -43,7 +43,7 @@ typedef struct lista
 	nodo *frente;
 	nodo *final;
 	int tam;
-	int ini;
+	
 }lista;
 
 //Definición de una posición

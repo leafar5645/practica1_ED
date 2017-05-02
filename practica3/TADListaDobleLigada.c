@@ -47,7 +47,7 @@ void Initialize(lista *l)
 	l->frente = NULL;
 	l -> final = NULL;
 	l->tam = 0;
-	l->ini=-1;
+	
 	return;
 
 }
@@ -290,17 +290,15 @@ Observaciones: El usuario a creado una lista,la lista fue correctamente iniciali
 */
 int Size(lista *l)
 {
-	if(l->ini==-1)
-	{
+	
 	return l->tam;
-	}
-	else
-		return 0;
+	
+	
 }
 
 boolean Empty(lista *l)
 {
-	setlocale(LC_ALL , "Spanish");
+
 	return (l->tam == 0) ? TRUE : FALSE;	
 }
 
