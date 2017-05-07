@@ -1,4 +1,8 @@
-// Práctica 5, N-Reinas ... equipo 932
+/* 
+Práctica 5, N-Reinas 
+Autor: Equipo 932
+Año 2017
+*/
 #include "presentacion.h"
 #include "NReinas.h"
 
@@ -13,12 +17,12 @@ main (void)			//Función principal, se efectúan las instrucciones principales d
   printf (" Ingresa tamanio (en cuadros) del tablero: ");
   scanf ("%d", &tamanio);	//Solicitamos tamanio
 
-  if (tamanio > 1)		//Si se ingresó un numero mayor a 1, se realizan cálculos
+  if (tamanio > 1)		//Si se ingresó un nùmero mayor a 1, se realizan cálculos
     {
       tablero = (int *) malloc (sizeof (int) * (tamanio + 1));	//Se solicita un bloque de memoria, es decir usamos memoria dinámica, pues no sabemos de que tamaño será el tablero
 
-      if (CalculoReinas (tablero, tamanio) == TRUE)	//Si se pudo resolver el juego de forma satisfactoria, se termina agradeciendo por jugar.               
-	{
+      if (CalculoReinas (tablero, tamanio) == TRUE)	//Si se pudo resolver el juego de forma satisfactoria, se mostrarà la soluciòn 1 y la 2 (que es la transpuesta a la 1).               
+	{  //En el if anterior, tambièn se efectua el llamado a CalculoReinas lo que implica que se realicen todas sus instrucciones, asi imprimièndose el camino para llegar a la soluciòn
 	  BorrarPantalla ();
 	  pintar (tablero, tamanio);	//Imprimimos la solución gráfica
 //Luego, imprimimos las 2 soluciones propuestas (como conjunto de coordenadas), esto se obtiene de forma similar a como se hace la representación gráfica.
