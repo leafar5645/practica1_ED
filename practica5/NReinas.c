@@ -41,7 +41,7 @@ void
 pintar (int *tablero, int tamanio)
 {
   int fil, col;
-printf("\n Solucion 1: \n");
+  printf ("\n Solucion 1: \n");
   printf ("\n ");
   for (fil = 0; fil < tamanio; fil++)	//Ciclo que imprime los valores almacenados en el arreglo de control principal, esto es de forma horizontal
     {
@@ -85,19 +85,19 @@ printf("\n Solucion 1: \n");
       printf ("\n ");		//Espacios que sirven para dar un atractivo visual al programa
     }
 
-printf("\n Solucion 2: \n");
+  printf ("\n Solucion 2: \n");
 //A continuacion se imprime una segunda solucion, esta se forma sabiendo que, si vemos al tablero como una matriz, la transpuesta de esta matriz, también dará solución al problema (practicamente se repite el proceso anterior, pero ahora se debe tomar filas como columnas y viceversa).
   printf ("\n ");
-for (fil = 0; fil < tamanio; fil++)	//Bloque que imprime el tablero. Para posiciones donde no haya reinas, aparecerá una 'X', y en la ubicación de la reina, aparecerá una 'Q'
+  for (fil = 0; fil < tamanio; fil++)	//Bloque que imprime el tablero. Para posiciones donde no haya reinas, aparecerá una 'X', y en la ubicación de la reina, aparecerá una 'Q'
     {
- printf (" %d ", tablero[fil]);  //Se escribe un vector vertical que marca los cambios en cada fila (recordemos que ahora imprimimos la transpuesta del tablero).
-if(tablero[fil]!=-1) //Esta condiciòn solo es para que el tablero no se mueva al aparecer "-1" a la izquierda, solo es para el atractivo visual
-printf(" ");
-      for (col = 0; col < tamanio; col++) //Se repite el mismo procedimiento cambiando solo la siguiente instrucciòn (ahora se considera columnas)
+      printf (" %d ", tablero[fil]);	//Se escribe un vector vertical que marca los cambios en cada fila (recordemos que ahora imprimimos la transpuesta del tablero).
+      if (tablero[fil] != -1)	//Esta condiciòn solo es para que el tablero no se mueva al aparecer "-1" a la izquierda, solo es para el atractivo visual
+	printf (" ");
+      for (col = 0; col < tamanio; col++)	//Se repite el mismo procedimiento cambiando solo la siguiente instrucciòn (ahora se considera columnas)
 	{
 	  if (col == tablero[fil])
 	    {
-	      if ((col == 1) && (fil == tamanio - 1) //Estas instrucciones siguen igual, para la soluciòn 2 tambièn verifica que reina halla llegado al final y no ataque (y deba moverse otra).
+	      if ((col == 1) && (fil == tamanio - 1)	//Estas instrucciones siguen igual, para la soluciòn 2 tambièn verifica que reina halla llegado al final y no ataque (y deba moverse otra).
 		  && (tablero[col + 1] == tamanio - 1)
 		  && (tablero[col + 2] == tamanio - 1)
 		  && (Sin_Ataque (tablero, col - 1))
@@ -119,7 +119,7 @@ printf(" ");
 	}
       printf ("\n ");
     }
-  EsperarMiliSeg (250); //Pausamos para ver cambios gráficamente
+  EsperarMiliSeg (250);		//Pausamos para ver cambios gráficamente
 
 }
 
@@ -154,7 +154,7 @@ Reinas (int *tablero, int pos_actual, int tamanio)
 	  printf ("\n Calculando... \n");
 
 
-	  tablero[pos_actual] = i;  //En esta parte almacenamos en la columna actual, el valor (o "fila") en la que encuentra la reina
+	  tablero[pos_actual] = i;	//En esta parte almacenamos en la columna actual, el valor (o "fila") en la que encuentra la reina
 	  pintar (tablero, tamanio);	//Pintamos tablero con cambios respectivos en las reinas movidas
 	  if (Sin_Ataque (tablero, pos_actual))	//Si la reina en la posición actual de la columna actual no ataca a ninguna de las reinas anteriores...
 	    {
