@@ -71,7 +71,7 @@ pintar (int ndiscos, int A, int C, int B, int RepetHan)
 	  printf ("%c", 254);	//Se imprime el cuadrito mediante su funciòn ascii para windows. En otros SO, probablemente se verà una figurita diferente, puesto que no reconocerà el còdigo ascci, sin embargo, aùn asì, se distingue sobre el demàs texto, cumpliendo su funciòn gràfica
 	  printf (" ");		
 	  printf ("%c", 254);
-	  while (repetHan > ndiscos)
+	  while (RepetHan > ndiscos)
 	    {
 	  /*Esta secciòn se explicaba arriba con un ejemplo, bàsicamente la diferencia entre repetHan y ndiscos nos indicarà las veces
 	  que le añadiremos "2 cuadritos" a nuestro disco original de cada fila de la torre, esto por que cada disco es de diferente tamaño*/
@@ -79,7 +79,7 @@ pintar (int ndiscos, int A, int C, int B, int RepetHan)
 	      printf ("%c", 254);	
 	      printf (" ");	
 	      printf ("%c", 254);
-	      repetHan--;
+	      RepetHan--;
 	    }
 
 	}
