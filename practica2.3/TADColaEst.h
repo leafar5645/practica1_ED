@@ -24,7 +24,7 @@ antes de la ejecución del programa.
 //DEFINICIONES DE TIPOS DE DATO
 
 //Definir un boolean (Se modela con un "char")
- typedef  char boolean;         //   SOLO PARA LINUX
+ //typedef  char boolean;         //   SOLO PARA LINUX
 
 //Definir un elemento (Se modela con una estructura "elemento")
 typedef struct elemento
@@ -33,8 +33,8 @@ typedef struct elemento
 	int tiempo;
 	int tiempo_total;
 	int n;
-	char car;
 	int num;
+	char car;
 } elemento;
 
 //Definir una cola (Se modela con una estructura que incluye un arreglo estatico de "elemento",
@@ -51,7 +51,7 @@ typedef struct cola
 void Initialize(cola * c);			//Inicializar cola (Initialize): Recibe una cola y la inicializa para su trabajo normal.
 void Queue(cola * c, elemento e);	//Encolar (Queue): Recibe una cola y agrega un elemento al final de ella. 
 elemento Dequeue(cola * c);			//Desencolar (Dequeue): Recibe una cola y remueve el elemento del frente retornándolo.
-boolean Empty(cola * c);			//Es vacía (Empty): Recibe la cola y devuelve verdadero si esta esta vacía.
+char Empty(cola * c);			//Es vacía (Empty): Recibe la cola y devuelve verdadero si esta esta vacía.
 elemento Front(cola * c);			//Frente (Front): Recibe una cola y retorna el elemento del frente.	
 elemento Final(cola * c);			//Final (Final): Recibe una cola y retorna el elemento del final.
 elemento Element(cola *c, int i); 	// Recibe una cola y un número de elemento de 1 al tamaño de la cola y retorna el elemento de esa posición.
