@@ -2,10 +2,9 @@
 Autor: Equipo 932 
 Año 2017*/
 
-#include "TADColaEst.h"    //Se incluye la biblioteca de la cola estàtica, podemos variar esto quitando alguno de los comentarios de abajo.
-//#include "TADColaDin.h"
+
 #include "ImprimirCajas.h"  
-#include <stdlib.h>
+
 
 int
 main (void)
