@@ -6,29 +6,32 @@ Observaciones: Esta implementación de la libreria solo es compatible con Linux 
 Compilación de la libreria: Linux (gcc -c presentacionLin.c)
 */
 //LIBRERIAS
-#include <stdio.h>			
-#include <unistd.h>  		//Libreria no ANSI C
+#include <stdio.h>
+#include <unistd.h>		//Libreria no ANSI C
 #include"presentacion.h"
 
 //DEFINICIÓN DE FUNCIONES
 
 //Función para mover el cursor de escritura de pantalla, simulación de la función gotoxy() que se tenia en borland 3.0 en la libreria conio.h
-void MoverCursor( int x, int y ) 
+void
+MoverCursor (int x, int y)
 {
-	printf("%c[%d;%df",0x1B,y,x);
-	return;
+  printf ("%c[%d;%df", 0x1B, y, x);
+  return;
 };
 
 //Función para esperar un tiempo en milisegundos, simulación de la función delay() que se tenia en borland 3.0 en la libreria conio.h
-void EsperarMiliSeg(int t)
+void
+EsperarMiliSeg (int t)
 {
-	usleep(t*1000);
-	return;
+  usleep (t * 1000);
+  return;
 }
 
 //Función para borrar la pantalla de la consola, simulación de la función clrscr() que se tenia en borland 3.0 en la libreria conio.h
-void BorrarPantalla(void)
+void
+BorrarPantalla (void)
 {
-	system("clear");
-	return;
+  system ("clear");
+  return;
 }

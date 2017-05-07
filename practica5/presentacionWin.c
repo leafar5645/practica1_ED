@@ -12,24 +12,27 @@ Compilación de la libreria: Windows (gcc -c presentacionWin.c)
 //DEFINICIÓN DE FUNCIONES
 
 //Función para mover el cursor de escritura de pantalla, simulación de la función gotoxy() que se tenia en borland 3.0 en la libreria conio.h
-void MoverCursor( int x, int y ) 
+void
+MoverCursor (int x, int y)
 {
-	HANDLE hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD position = { x, y }; 
-	SetConsoleCursorPosition( hStdout, position );
-	return;
+  HANDLE hStdout = GetStdHandle (STD_OUTPUT_HANDLE);
+  COORD position = { x, y };
+  SetConsoleCursorPosition (hStdout, position);
+  return;
 };
 
 //Función para esperar un tiempo en milisegundos, simulación de la función delay() que se tenia en borland 3.0 en la libreria conio.h
-void EsperarMiliSeg(int t)
+void
+EsperarMiliSeg (int t)
 {
-	Sleep(t);
-	return;
+  Sleep (t);
+  return;
 }
 
 //Función para borrar la pantalla de la consola, simulación de la función clrscr() que se tenia en borland 3.0 en la libreria conio.h
-void BorrarPantalla(void)
+void
+BorrarPantalla (void)
 {
-	system("cls");
-	return;
+  system ("cls");
+  return;
 }

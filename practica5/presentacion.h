@@ -11,10 +11,10 @@ Observaciones: La implementación de esta libreria es distinta si se trata de Win
 
 //DECLARACIÓN DE FUNCIONES Y VARIABLES
 
-typedef unsigned char boolean; //Definimos al boolean como un tipo de dato caracter (especial)
+typedef unsigned char boolean;	//Definimos al boolean como un tipo de dato caracter (especial)
 
-void MoverCursor( int x, int y ); 	//Función para mover el cursor de escritura de pantalla, simulación de la función gotoxy() que se tenia en borland 3.0 en la libreria conio.h
+void MoverCursor (int x, int y);	//Función para mover el cursor de escritura de pantalla, simulación de la función gotoxy() que se tenia en borland 3.0 en la libreria conio.h
 
-void EsperarMiliSeg(int t);			//Función para esperar un tiempo en milisegundos, simulación de la función delay() que se tenia en borland 3.0 en la libreria conio.h
+void EsperarMiliSeg (int t);	//Función para esperar un tiempo en milisegundos, simulación de la función delay() que se tenia en borland 3.0 en la libreria conio.h
 
-void BorrarPantalla(void);			//Función para borrar la pantalla de la consola, simulación de la función clrscr() que se tenia en borland 3.0 en la libreria conio.h
+void BorrarPantalla (void);	//Función para borrar la pantalla de la consola, simulación de la función clrscr() que se tenia en borland 3.0 en la libreria conio.h
