@@ -7,7 +7,7 @@ main (void)			//Función principal, se efectúan las instrucciones principales d
 {
   int *tablero;
   int tamanio = 0;		//tamanio: Almacenará el tamanio para el tablero N*N (es decir, cuanto vale esa N)
-  int i,j;			//Variables para realizar recorridos
+  int i, j;			//Variables para realizar recorridos
 
   printf ("\n\t\t\t PRACTICA 5. N-REINAS (BACKTRACKING) \n");
   printf (" Ingresa tamanio (en cuadros) del tablero: ");
@@ -22,24 +22,26 @@ main (void)			//Función principal, se efectúan las instrucciones principales d
 	  BorrarPantalla ();
 	  pintar (tablero, tamanio);	//Imprimimos la solución gráfica
 //Luego, imprimimos las 2 soluciones propuestas (como conjunto de coordenadas), esto se obtiene de forma similar a como se hace la representación gráfica.
-printf("\n Soluciones propuestas para %d reinas:\n\t", tamanio);
-for(i=0;i<tamanio;i++)
-{
-for(j=0;j<tamanio;j++)
-{	 
-if(j==tablero[i]) 
-printf ("(%d,%d) ",i,j);
-}}
-printf("\n\t");
-for(i=0;i<tamanio;i++)
-{
-for(j=0;j<tamanio;j++)
-{	 
-if(j==tablero[i]) 
-printf ("(%d,%d) ",j,i);
-}}
-printf("\n");	
-}
+	  printf ("\n Soluciones propuestas para %d reinas:\n\t", tamanio);
+	  for (i = 0; i < tamanio; i++)
+	    {
+	      for (j = 0; j < tamanio; j++)
+		{
+		  if (j == tablero[i])
+		    printf ("(%d,%d) ", i, j);
+		}
+	    }
+	  printf ("\n\t");
+	  for (i = 0; i < tamanio; i++)
+	    {
+	      for (j = 0; j < tamanio; j++)
+		{
+		  if (j == tablero[i])
+		    printf ("(%d,%d) ", j, i);
+		}
+	    }
+	  printf ("\n");
+	}
       else			//Si no se resuelve el juego, se indica que no puede calcularse solución
 	{
 	  BorrarPantalla ();
