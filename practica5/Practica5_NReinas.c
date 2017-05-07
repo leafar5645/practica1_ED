@@ -22,7 +22,7 @@ main (void)			//Función principal, se efectúan las instrucciones principales d
       tablero = (int *) malloc (sizeof (int) * (tamanio + 1));	//Se solicita un bloque de memoria, es decir usamos memoria dinámica, pues no sabemos de que tamaño será el tablero
 
       if (CalculoReinas (tablero, tamanio) == TRUE)	//Si se pudo resolver el juego de forma satisfactoria, se mostrarà la soluciòn 1 y la 2 (que es la transpuesta a la 1).               
-	{  //En el if anterior, tambièn se efectua el llamado a CalculoReinas lo que implica que se realicen todas sus instrucciones, asi imprimièndose el camino para llegar a la soluciòn
+	{			//En el if anterior, tambièn se efectua el llamado a CalculoReinas lo que implica que se realicen todas sus instrucciones, asi imprimièndose el camino para llegar a la soluciòn
 	  BorrarPantalla ();
 	  pintar (tablero, tamanio);	//Imprimimos la solución gráfica
 //Luego, imprimimos las 2 soluciones propuestas (como conjunto de coordenadas), esto se obtiene de forma similar a como se hace la representación gráfica.
