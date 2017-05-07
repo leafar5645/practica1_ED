@@ -1,3 +1,6 @@
+/* Practica 4_Fibonacci.c
+Autor: Equipo 932
+Año 2017 */
 #include "Fibonacci.h"
 
 int
