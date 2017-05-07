@@ -1,14 +1,6 @@
 // Práctica 5, N-Reinas ... equipo 932
 #include "presentacion.h"
 #include "NReinas.h"
-#define TRUE 1
-#define FALSE 0
-
-void pintar (int *tablero, int tamanio);	//Función que pintará los cambios en el tablero,en cada paso
-void inicializar (int *tablero, int tamanio);	//Función que inicializa los valores del "arreglo de control de columnas" del tablero, en -1
-boolean Reinas (int *tablero, int pos_actual, int tamanio);	//Función que realiza los cálculos principales, va haciendo el backtracking. Al final indica si se resolvió o no el juego
-boolean sin_Ataque (int *tablero, int pos_actual);	//Función que revisará si la pieza movida recientemente, ataca a otra colocada anteriormente
-boolean CalculoReinas (int *tablero, int tamanio);	//Función "inicial" que manda a llamar a la función reinas.
 
 int
 main (void)			//Función principal, se efectúan las instrucciones principales del programa.
@@ -56,7 +48,6 @@ printf("\n");
 	  printf ("\n\t ERROR, no hay forma de acomodar las reinas.\n\n");
 	  return 0;
 	}
-
 
     }
   else				//Si se metió un número menor a 1, por lógica no hay cálculos a realizar.
