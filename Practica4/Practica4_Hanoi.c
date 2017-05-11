@@ -6,7 +6,7 @@ int
 main (void)
 {
 	/*repetHan: Esta variable serà importante para la impresiòn de los discos, pues bàsicamente almacena
-	la cantidad de veces que se llego al caso base no recursivo de Hanoi (fin de una serie de recursividad).*/ 
+	la cantidad de veces que se llego al caso base no recursivo de Hanoi (fin de una serie de recursividad), o el nùmero de veces que se moviò al disco tamanio 1*/ 
   int repetHan = 0;  
   int inicio = 1, auxiliar = 2, destino = 3;  //Variables para designar cada palo (son 3)
   int numdisc = 1, i;   //numdisc nos permitirà, bàsicamente, saber con que disco se esta trabajando (por su posiciòn/tamaño, donde el disco 1, està hasta arriba de la torre).
