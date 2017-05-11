@@ -10,7 +10,7 @@ Hanoi (int ndiscos, int A, int C, int B, int repetHan)  //Funciòn que hace la o
 
   if (ndiscos == 1)
     {
-      //Si solo tienes un disco en el palo, lo pasas al destino automaticamente*/
+      //Si el disco es de tamaño 1, lo pasas al destino automaticamente*/
 
       printf (" Mueve del Palo %d a Palo %d, al disco (%d):\n", A, C,
 	      ndiscos);
