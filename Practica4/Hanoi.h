@@ -1,4 +1,4 @@
-/* Título: Practica4_Fibo.c 
+/* Título: Hanoi.h 
    Descripción: Cabecera que incluye las bibliotecas predefinidas y define las funciones.
     Autor: Equipo 932            Fecha: 11 de Mayo de 2017
     Versión: 1.0
