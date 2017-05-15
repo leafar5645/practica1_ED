@@ -1,3 +1,8 @@
+/* Título: Practica4_Fibo.c 
+   Descripción: Cabecera que incluye las bibliotecas predefinidas y define las funciones.
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
+*/
 #include <stdio.h> //Incluimos cabecera stdio para usar printfs y scanfs
 #include <stdlib.h> 
 
