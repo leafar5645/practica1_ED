@@ -17,8 +17,8 @@ main (void)
   char resp = 's';   //Variable que definirá si se repite o no el programa
   int n = 0, opcion, posicion;
 
-  while (resp == 's') //Mientras la variable "resp" sea 's' de "si", se realizarán las instrucciones 
-                                  del programa
+  while (resp == 's') /*Mientras la variable "resp" sea 's' de "si", se realizarán las instrucciones 
+                                  del programa */
     {
       printf ("\n\t\t\t PRACTICA 4. RECURSIVIDAD EN SERIE FIBONACCI Y TRIBONACCI");
 
@@ -29,16 +29,16 @@ main (void)
 	printf ("\nIngresa un numero valido.");
 
       else
-	{       //Si el numero ingresado fue válido, se introduce un 
-                       menú de opciones
+	{       /*Si el numero ingresado fue válido, se introduce un 
+                       menú de opciones */
 	  printf ("\n Que deseas hacer?");
 	  printf ("\n (1) Conocer el valor Fibonacci en la posicion especifica");
 	  printf ("\n (2) Observar la serie Fibonacci hasta la posicion dada\n\t");
           printf ("\n (3) Observar la serie Tribonacci hasta la posicion dada\n\t");
 	  scanf ("%d", &opcion);
 
-	  switch (opcion) //Para este menú de opciones trabajaremos con la variable 
-                                           "opción" que puede ser igual a 1, 2 o 3, solamente.
+	  switch (opcion) /*Para este menú de opciones trabajaremos con la variable 
+                                           "opción" que puede ser igual a 1, 2 o 3, solamente. */
 	    {
 	    case 1:
 	      printf ("\n El numero de la posicion Fibonacci %d de la serie es: %.0lf",
@@ -59,16 +59,15 @@ main (void)
 
 
 	    default:
-	      printf ("\nIngresa un numero valido.");  //Si opción es diferente de 1 o 2, no se 
+	      printf ("\nIngresa un numero valido.");  /*Si opción es diferente de 1 o 2, no se 
                                                                                    habrá elegido una operación a hacer del 
-                                                                                   menú.
+                                                                                   menú. */
 	    }
 
 	}
 
       printf ("\n\n te gustaria repetir la operación?  (s = Si / N = No): ");
-      scanf ("%s", &resp);  //Pedimos que se ingrese la variable resp, para saber si se repiten 
-                                          o no las instrucciones desde cero.
+      scanf ("%s", &resp);  //Pedimos que se ingrese la variable resp, para saber si se repiten o no las instrucciones desde cero. 
     }
   return 0;
 }
