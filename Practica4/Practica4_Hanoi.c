@@ -1,5 +1,8 @@
-//Programa principal del juego de torres de Hanoi. Equipo 932
-
+/* Título: Practica4_Hanoi.c 
+   Descripción: Aquí se realizan las operaciones principales y se manda a llamar a las funciones de las bibliotecas. Esta funciòn repetirà sus instrucciones cuantas veces quiera el usuario.
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
+*/
 #include "Hanoi.h"
 
 int
