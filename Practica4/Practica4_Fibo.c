@@ -1,6 +1,8 @@
-/* Practica 4_Fibonacci.c
-Autor: Equipo 932
-Año 2017 */
+/* Título:Practica4_Fibo.c 
+   Descripción: Es el archivo principal, donde se desarrollan las instrucciones más importantes, en esta funciòn se ingresan los datos a utilizar y aparece un menù donde eliges si quieres ver solo el valor de la serie fibonacci en una posiciòn indicada, o toda la serie hasta dicha posiciòn.
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
+*/
 #include "Fibonacci.h"
 
 int
@@ -30,7 +32,7 @@ main (void)
 	    {
 	    case 1:
 	      printf ("\n El numero de la posicion %d de la serie es: %.0lf",
-		      n, fibonacci (n));
+		      n, fibonacci (n));    //Imprime solo el nùmero en la posiciòn indicada.
 	      break;   
 
 	    case 2:
