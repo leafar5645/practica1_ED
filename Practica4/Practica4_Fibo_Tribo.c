@@ -5,7 +5,7 @@
                         posición indicada, o toda la serie hasta dicha posición, y también si quieres 
                         obtener la serie tribonacci hasta la posición ingresada.
                  - No recibe datos iniciales.
-		 - Devuelve doubles "disfrazados" de enteros, pues los nùmeros de las series son enteros (y trabajamos con doubles por el nùmero de dìgitos que aguantan)
+		 - Regresa 0, es decir, que no tuvo error el programa. Devuelve, al llamar a las funciones, doubles "disfrazados" de enteros, pues los nùmeros de las series son enteros (y trabajamos con doubles por el nùmero de dìgitos que aguantan)
     Autor: Equipo 932            Fecha: 11 de Mayo de 2017
     Versión: 1.0
 */
