@@ -19,9 +19,9 @@ fibonacci (int n)
 	/*La función se encuentra sin optimizar, Si el número de la  
              serie es menor a 2, se imprime, terminando la recursividad */
   if (n < 2)
-    return n;  //Si el numero ingresado "n" es menor a 2, se imprime  
+    return n;  /*Si el numero ingresado "n" es menor a 2, se imprime  
         dicho número, si no, se realiza la suma, que por definición,  
-        pide la serie fibonacci
+        pide la serie fibonacci */
   else
     return fibonacci (n - 1) + fibonacci (n - 2); 
 	/*Ejemplo: Si n=3, hace la suma de los valores de la serie, en
@@ -41,9 +41,9 @@ tribonacci (int n)
       if (n == 0)
           return 1;  
      else
-         return n;  //Si el numero ingresado "n" es menor a 3, se imprime  
+         return n;  /*Si el numero ingresado "n" es menor a 3, se imprime  
         dicho número, si no, se realiza la suma, que por definición,  
-        pide la serie tribonacci
+        pide la serie tribonacci */
   }
   else
     return tribonacci (n - 1) + tribonacci (n - 2) +  tribonacci (n - 3);
