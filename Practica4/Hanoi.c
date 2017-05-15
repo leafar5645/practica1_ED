@@ -1,4 +1,10 @@
-//Biblioteca del programa de torres de hanoi. Equipo 932
+/* Título: Hanoi.c 
+   Descripción: Muestra las operaciones a realizar para mover n discos, de acuerdo a las reglas del juego "Torres de Hanoi":
+- Solo puede mover el disco superior de cualquiera de las astas.
+- Un disco más grande nunca puede estar encima de uno más pequeño.
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
+*/
 #include "Hanoi.h"
 /*  Instrucciones: Muestra las operaciones a realizar para mover n discos, de acuerdo a las reglas del juego "Torres de Hanoi":
 - Solo se puede mover el disco superior de cualquiera de las astas/palos.
@@ -85,6 +91,4 @@ pintar (int ndiscos, int A, int C, int B, int RepetHan)
 	}
       printf ("\n");  //Al finalizar la impresion de cuadritos horizontalmente, se darà un salto de pàgina para que se visualice una torre, esto al final de la ejecuciòn del programa.
     }
-
-
 }
