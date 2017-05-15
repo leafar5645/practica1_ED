@@ -1,4 +1,12 @@
-// Biblioteca del programa fibonacci. Equipo: 932 
+/* 
+Título: fibonacci.c 
+   Descripción: Función que calcula la posición (numero 'n') de la  
+                         serie fibonacci que se indica.
+-	Recibe: Posición o número en la serie. 
+-	Retorna: Entero, el valor encontrado en esa posición.   
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1
+*/
 #include "Fibonacci.h"
 
 /*
