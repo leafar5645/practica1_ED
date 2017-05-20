@@ -1,6 +1,12 @@
-//Cabecera de práctica 5. Equipo 932. 2017
+/* Título: NReinas.h 
+   Descripción: Cabecera de la práctica 5, contiene las definiciones de TRUE y FALSE para trabajar con funciones booleanas.
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
+*/
+
 #define TRUE 1
 #define FALSE 0
+
 
 void pintar (int *tablero, int tamanio);	//Función que pintará los cambios en el tablero,en cada paso
 void inicializar (int *tablero, int tamanio);	//Función que inicializa los valores del "arreglo de control de columnas" del tablero, en -1
