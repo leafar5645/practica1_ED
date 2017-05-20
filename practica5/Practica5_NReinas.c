@@ -1,7 +1,9 @@
-/* 
-Práctica 5, N-Reinas 
-Autor: Equipo 932
-Año 2017
+/*  Título: Practica5_NReinas.c
+   Descripción: Funciòn principal de la pràctica 5, se efectùan las instrucciones principales.
+   Recibe: No recibe nada, en esta funciòn se pediràn los datos necesarios y se crearà el tablero.
+   Retorna: Un entero "0" si el programa no tuvo errores de ejecuciòn.
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
 */
 #include "presentacion.h"
 #include "NReinas.h"
