@@ -1,8 +1,17 @@
+/* Título: NReinas.c
+   Descripción: Funciones que en conjunto realizan el calculo de la soluciòn del juego de las N-Reinas y muestran como llegar a èl paso a paso de manera gràfica.
+
+    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
+    Versión: 1.0
+*/
+
 #include "presentacion.h"
 #include "NReinas.h"
 
 /* La función inicializar se utiliza solo una vez, para hacer que los valores del "arreglo de control de columnas" del tablero, sean -1,
-en otras palabras, esta haciendo que no haya reinas ubicadas en ninguna de las posiciones de cada columna */
+en otras palabras, esta haciendo que no haya reinas ubicadas en ninguna de las posiciones de cada columna.
+Recibe: El tablero (arreglo de control de columnas) con el que se trabaja y el tamaño de este.
+Retorna: No retorna nada, solo hace una operaciòn de inicializaciòn sobre el arreglo "tablero".*/
 void
 inicializar (int *tablero, int tamanio)
 {
@@ -16,7 +25,9 @@ inicializar (int *tablero, int tamanio)
 ataca a otra puesta en alguna de las columnas anteriores, esto es, si la posición en la columna es igual, o si esta en diagonal (lo que se cumple si,
 al restar la posición actual (en arreglo de control), con alguna posición i anterior, este resultado es igual al valor positivo de la diferencia entre
 la posición de la reina en la columna actual (osea, el valor almacenado en la posición actual del arreglo de control) menos la posición en columna de la 
-reina en la columna i del arreglo de control*/
+reina en la columna i del arreglo de control.
+Recibe: El tablero (arreglo de control de columnas) y la posiciòn actual en èl.
+Retorna: Un caracter booleano, TRUE si no atacan las reinas, FALSE en otro caso.*/
 boolean
 Sin_Ataque (int *tablero, int pos_actual)
 {
@@ -35,8 +46,9 @@ Sin_Ataque (int *tablero, int pos_actual)
 }
 
 /* Función pintar, presenta gráficamente el tablero, y arriba de él, escribe el "arreglo de control de columnas", es decir, aparecen los valores almacenados
-en cada posición del arreglo, en otras palabras, las posiciones de las reinas de cada columna*/
-
+en cada posición del arreglo, en otras palabras, las posiciones de las reinas de cada columna.
+Recibe: Tablero con el que estamos trabajando y su tamaño.
+Retorna: No retorna nada, solo imprime en pantalla, paso a paso y al ser llamado en otra funciòn, los movimientos de las reinas para llegar a la soluciòn del juego.*/
 void
 pintar (int *tablero, int tamanio)
 {
@@ -125,7 +137,9 @@ pintar (int *tablero, int tamanio)
 
 /* La función Reinas, básicamente efectua el cálculo recursión del backtracking, en ella se debe saber si la reina movida recientemente, ataca a
 alguna de las otras reinas posicionadas anteriormente, por lo que se requiere llamar a la función Sin_Ataque. La variable "pos_actual" será la que definirá
-la posición horizontal en el "arreglo de control de columnas", o mejor dicho, en que columna del tablero nos encontramos.*/
+la posición horizontal en el "arreglo de control de columnas", o mejor dicho, en que columna del tablero nos encontramos.
+Recibe: El tablero (arreglo de control de columnas), posiciòn actual en èl y su tamaño.
+Retorna: caracter booleano, TRUE, pràcticamente, si se pudo calcular la soluciòn; FALSE en otro caso.*/
 
 boolean
 Reinas (int *tablero, int pos_actual, int tamanio)
@@ -176,7 +190,7 @@ Reinas (int *tablero, int pos_actual, int tamanio)
 
     }
 }
-
+//Funciòn CalculoReinas Recibe el tablero y su tamaño; Retorna un caracter booleano, el resultado de la funciòn Reinas.
 boolean
 CalculoReinas (int *tablero, int tamanio)	/*Función que calcula la solución del juego, por lo cuál requiere retornar si se logró resolver o no,
 						   por medio de la función Reinas. */
