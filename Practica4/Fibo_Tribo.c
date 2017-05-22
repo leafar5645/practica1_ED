@@ -1,10 +1,15 @@
-/* Título: Fibo_Tribo.c 
+/* 
+Título: Fibo_Tribo.c 
    Descripción: Función que calcula la posición (numero 'n') en la  
                          serie Fibonacci o en la serie Tribonacci
 -	Recibe: Posición o número en la serie. 
 -	Retorna: Entero, el valor encontrado en esa posición.   
-    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-    Versión: 1.0
+    Autor: Equipo 932
+    Integrantes:
+         - Hernández Ruiz Rafael
+	 - Maya Rocha Luis Emmanuel
+	 - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.5
 */
 #include "Fibonacci_Tribonacci.h"
 
