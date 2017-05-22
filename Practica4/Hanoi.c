@@ -5,9 +5,12 @@
 
 -Recibe: cada una recibe el “tamaño del disco en curso” (ndiscos), el palo inicial, destino y auxiliar y la variable repetHan, aunque en pintar solo se necesitaran los palos, al llamarla al final del programa principal.
 -Retorna: Solo hacen operaciones, no regresan algo como tal.
-
-    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-    Versión: 1.0
+    Autor: Equipo 932
+    Integrantes:
+         - Hernández Ruiz Rafael
+	 - Maya Rocha Luis Emmanuel
+	 - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.7
 */
 #include "Hanoi.h"
 /*  Instrucciones: Muestra las operaciones a realizar para mover n discos, de acuerdo a las reglas del juego "Torres de Hanoi":
