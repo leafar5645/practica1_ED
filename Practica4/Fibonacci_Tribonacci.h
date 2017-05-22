@@ -1,7 +1,11 @@
 /* Título: Fibonacci_Tribonacci.h 
    Descripción: Cabecera que incluye las bibliotecas predefinidas y define las funciones. 
-   Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-   Versión: 1.3
+    Autor: Equipo 932
+    Integrantes:
+         - Hernández Ruiz Rafael
+	 - Maya Rocha Luis Emmanuel
+	 - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.1
 */
 #include <stdio.h> //Incluimos biblioteca estàndar
 
