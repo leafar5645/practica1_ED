@@ -3,7 +3,7 @@
  
     Autor: Equipo 932
     Integrantes:
-       - Hernández Ruiz Rafael
+            - Hernández Ruiz Rafael
 	    - Maya Rocha Luis Emmanuel
 	    - Rivas Rojas Arturo
     Fecha: 11 de Mayo de 2017               Versión: 1.2
