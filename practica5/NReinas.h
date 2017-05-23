@@ -1,7 +1,12 @@
 /* Título: NReinas.h 
    Descripción: Cabecera de la práctica 5, contiene las definiciones de TRUE y FALSE para trabajar con funciones booleanas.
-    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-    Versión: 1.0
+ 
+    Autor: Equipo 932
+    Integrantes:
+       - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.2
 */
 
 #define TRUE 1
