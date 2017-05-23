@@ -1,8 +1,12 @@
 /* Título: NReinas.c
    Descripción: Funciones que en conjunto realizan el calculo de la soluciòn del juego de las N-Reinas y muestran como llegar a èl paso a paso de manera gràfica.
-
-    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-    Versión: 1.0
+   
+    Autor: Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.8
 */
 
 #include "presentacion.h"
