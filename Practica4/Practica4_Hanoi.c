@@ -2,9 +2,13 @@
    Descripción: Aquí se realizan las operaciones principales y se manda a llamar a las funciones de las bibliotecas. Esta funciòn repetirà sus instrucciones cuantas veces quiera el usuario.
     -Recibe: No se ingresa nada, puesto que es la función principal.
     -Retorna: Retorna un entero “0” para indicar que el programa corrió sin fallos
-
-    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-    Versión: 1.0
+   
+    Autor: Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.9
 */
 #include "Hanoi.h"
 
