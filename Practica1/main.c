@@ -1,3 +1,15 @@
+/*  Título: main.c
+   Descripción: funciòn principal de la pràctica 2, aquì se efectùan las instrucciones principales del còdigo, mandando a llamar funciones extra. 
+                 Se pedirà una expresiòn de letras y operandos, checando que esten bien puestos los parèntesis, y mostrando expresiòn ordenada en posfijo, luego se pedirà el valor de cada letra y se harà la operaciòn.
+ 
+    Autor: Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha: 18 de Mayo de 2017               Versión: 2.1
+*/
+
 #include<stdio.h>
 
 #include<string.h>
