@@ -7,7 +7,7 @@ Compilación de la libreria: Linux (gcc -c presentacionLin.c)
 
      Equipo 932
     Integrantes:
-      - Hernández Ruiz Rafael
+            - Hernández Ruiz Rafael
 	    - Maya Rocha Luis Emmanuel
 	    - Rivas Rojas Arturo
     Fecha de uso por el equipo: 18 de Mayo de 2017   
