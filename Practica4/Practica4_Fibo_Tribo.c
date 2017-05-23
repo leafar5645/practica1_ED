@@ -6,8 +6,13 @@
                         obtener la serie tribonacci hasta la posición ingresada.
                  - No recibe datos iniciales.
 		 - Regresa 0, es decir, que no tuvo error el programa. Devuelve, al llamar a las funciones, doubles "disfrazados" de enteros, pues los nùmeros de las series son enteros (y trabajamos con doubles por el nùmero de dìgitos que aguantan)
-    Autor: Equipo 932            Fecha: 11 de Mayo de 2017
-    Versión: 1.0
+   
+    Autor: Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha: 11 de Mayo de 2017               Versión: 1.4
 */
 #include "Fibonacci_Tribonacci.h"
 
