@@ -7,7 +7,7 @@ Observaciones: La implementación de esta libreria es distinta si se trata de Wi
  
      Equipo 932
     Integrantes:
-      - Hernández Ruiz Rafael
+            - Hernández Ruiz Rafael
 	    - Maya Rocha Luis Emmanuel
 	    - Rivas Rojas Arturo
     Fecha de uso por el equipo: 18 de Mayo de 2017             
