@@ -1,17 +1,24 @@
-/*
-Autor: Edgardo Adri醤 Franco Mart韓ez
-Versi髇 1.1 (02 de Octubre de 2013)
-Descripci髇: Cabecera de la libreria para recrear presentaciones m醩 agradables al usuario en el modo consola bajo Windows
-Observaciones: Esta implementaci髇 de la libreria solo es compatible con Windows y el compilador MinGW ya que utiliza la libreria "windows.h", la cu醠 no es estandar.
-Compilaci髇 de la libreria: Windows (gcc -c presentacionWin.c)
+/* T矛tulo: presentacionWin.c
+Autor original: Edgardo Adri谩n Franco Mart铆nez
+Versi贸n 1.1 (02 de Octubre de 2013)
+Descripci贸n: Cabecera de la libreria para recrear presentaciones m谩s agradables al usuario en el modo consola bajo Windows
+Observaciones: Esta implementaci贸n de la libreria solo es compatible con Windows y el compilador MinGW ya que utiliza la libreria "windows.h", la cu谩l no es estandar.
+Compilaci贸n de la libreria: Windows (gcc -c presentacionWin.c)
+
+     Equipo 932
+    Integrantes:
+      - Hern谩ndez Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha de uso por el equipo: 18 de Mayo de 2017   
 */
 //LIBRERIAS
 #include <windows.h>
 #include"presentacion.h"
 
-//DEFINICI覰 DE FUNCIONES
+//DEFINICI脫N DE FUNCIONES
 
-//Funci髇 para mover el cursor de escritura de pantalla, simulaci髇 de la funci髇 gotoxy() que se tenia en borland 3.0 en la libreria conio.h
+//Funci贸n para mover el cursor de escritura de pantalla, simulaci贸n de la funci贸n gotoxy() que se tenia en borland 3.0 en la libreria conio.h
 void
 MoverCursor (int x, int y)
 {
@@ -21,7 +28,7 @@ MoverCursor (int x, int y)
   return;
 };
 
-//Funci髇 para esperar un tiempo en milisegundos, simulaci髇 de la funci髇 delay() que se tenia en borland 3.0 en la libreria conio.h
+//Funci贸n para esperar un tiempo en milisegundos, simulaci贸n de la funci贸n delay() que se tenia en borland 3.0 en la libreria conio.h
 void
 EsperarMiliSeg (int t)
 {
@@ -29,7 +36,7 @@ EsperarMiliSeg (int t)
   return;
 }
 
-//Funci髇 para borrar la pantalla de la consola, simulaci髇 de la funci髇 clrscr() que se tenia en borland 3.0 en la libreria conio.h
+//Funci贸n para borrar la pantalla de la consola, simulaci贸n de la funci贸n clrscr() que se tenia en borland 3.0 en la libreria conio.h
 void
 BorrarPantalla (void)
 {
