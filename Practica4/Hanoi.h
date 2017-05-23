@@ -5,10 +5,10 @@
    
     Autor: Equipo 932
     Integrantes:
-       - Hernández Ruiz Rafael
+            - Hernández Ruiz Rafael
 	    - Maya Rocha Luis Emmanuel
 	    - Rivas Rojas Arturo
-    Fecha: 11 de Mayo de 2017               Versión: 1.1
+    Fecha: 11 de Mayo de 2017               Versión: 1.2
 */
 #include <stdio.h> //Incluimos cabecera stdio para usar printfs y scanfs
 #include <stdlib.h> 
