@@ -1,5 +1,5 @@
 /* Título: presentacion.h
-Autor original: Edgardo Adrián Franco Martínez
+Autor: Edgardo Adrián Franco Martínez
 Versión 1.0 (25 de Septiembre 2012)
 Descripción: Cabecera de la libreria para recrear presentaciones más agradables al usuario en el modo consola
 
