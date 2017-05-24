@@ -16,8 +16,8 @@ antes de la ejecuciÃ³n del programa.
 	   EQUIPO 932
    Integrantes:
 	      - Hernández Ruiz Rafael
-		    - Maya Rocha Luis Emmanuel
-		    - Rivas Rojas Arturo
+	      - Maya Rocha Luis Emmanuel
+	      - Rivas Rojas Arturo
 	    Fecha de uso por el equipo: 18 de Mayo de 2017              
 
 */
