@@ -36,9 +36,9 @@ typedef unsigned char boolean;
 typedef struct elemento
 {
 	//Variables de la estructura "elemento" (El usuario puede modificar)
-	char c;
-	//***
-	//***
+	char car;
+	int num;
+	float num2;
 	//***
 }elemento;
 
