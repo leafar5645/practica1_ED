@@ -17,7 +17,7 @@ COMPILACIÓN PARA GENERAR EL CÓDIGO OBJETO: gcc -c TADPilaEst.c
 	   EQUIPO 932
    Integrantes:
 	      - Hernández Ruiz Rafael
-        - Maya Rocha Luis Emmanuel
+              - Maya Rocha Luis Emmanuel
 	      - Rivas Rojas Arturo
 	    Fecha de uso por el equipo: 18 de Mayo de 2017              
 */
