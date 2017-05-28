@@ -1,9 +1,16 @@
-/*
+/* Título: presentacionLin.c
 Autor: Edgardo Adrián Franco Martínez
 Versión 1.1 (02 de Octubre de 2013)
 Descripción: Cabecera de la libreria para recrear presentaciones más agradables al usuario en el modo consola bajo Linux
 Observaciones: Esta implementación de la libreria solo es compatible con Linux y el compilador GNU gcc  de UNIX ya que utiliza la libreria "unistd.h", la cuál no es estandar.
 Compilación de la libreria: Linux (gcc -c presentacionLin.c)
+
+     Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha de uso por el equipo: 18 de Mayo de 2017
 */
 //LIBRERIAS
 #include <stdio.h>			
