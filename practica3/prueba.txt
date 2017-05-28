@@ -1,6 +1,0 @@
-televisor: ver programas.
-celular: Aparato electronico.
-ordenador: usar programa.
-ordenador: usar programa.
-perros: animal de 4 patas.
-^
