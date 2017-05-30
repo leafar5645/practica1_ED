@@ -7,7 +7,7 @@
             - Hernández Ruiz Rafael
 	    - Maya Rocha Luis Emmanuel
 	    - Rivas Rojas Arturo
-    Fecha: 18 de Mayo de 2017               Versión: 2.1
+    Fecha: Abril de 2017               Versión: 2.1
 */
 
 #include<stdio.h>
