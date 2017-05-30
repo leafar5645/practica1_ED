@@ -1,5 +1,5 @@
 /*  Título: main.c
-   Descripción: función principal de la práctica 2, aquí se efectúan las instrucciones principales del código, mandando a llamar funciones extra. 
+   Descripción: función principal de la práctica 1, aquí se efectúan las instrucciones principales del código, mandando a llamar funciones extra. 
                  Se pedirá una expresión de letras y operandos, checando que estén bien puestos los paréntesis, y mostrando expresión ordenada en posfijo, luego se pedirá el valor de cada letra y se hará la operación.
  
     Autor: Equipo 932
