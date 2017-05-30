@@ -1,4 +1,4 @@
-/*
+/* Tìtulo: TADLista.h
 IMPLEMENTACIONES DEL TAD LISTA (TADLista.h)
 AUTOR: Edgardo Adrián Franco Martínez (C) Marzo 2017
 VERSIÓN: 1.1
@@ -13,6 +13,13 @@ OBSERVACIONES: Este archivo solo incluye las estructuras, tipos de datos y
 declaración de las operaciones del TAD  Lista.
 
 EL CODIGO QUE IMPLEMENTA LAS FUNCIONES ES EL ARCHIVO: TADLista.c
+
+Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha de uso por el equipo: 18 de Mayo de 2017
 */
 #define TRUE	1
 #define FALSE	0
