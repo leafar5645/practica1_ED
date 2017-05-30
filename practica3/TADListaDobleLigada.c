@@ -1,4 +1,4 @@
-/*
+/* Tìtulo: TADListaDobleLigada.c
 IMPLEMENTACIONES DE LA LIBRERIA DEL TAD LISTA (TADLista.h)
 AUTOR: Edgardo Adrián Franco Martínez (C) Marzo 2017
 VERSIÓN: 1.1
@@ -19,7 +19,12 @@ NULL<-*    * <- *    * <- *    * <- *    * <- *    * <- *    *
       *    * -> *    * -> *    * -> *    * -> *    * -> *    * -> NULL
       ******    ******    ******    ******    ******    ******    
 
-COMPILACIÓN PARA GENERAR EL CÓDIGO OBJETO: gcc TADLista.c -c 
+Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha de uso por el equipo: 18 de Mayo de 2017
 */
 
 //LIBRERAS
