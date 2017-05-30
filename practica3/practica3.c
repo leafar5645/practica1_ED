@@ -1,20 +1,27 @@
+/*  Título: practica3.c
+   Descripción: Conjunto de funciones que realizan cada una de las tareas solicitadas por las opciones del menù principal. Se incluye la funciòn principal main (Que contiene al menù y llamadas a las demàs funciones).
+    Autor: Equipo 932
+    Integrantes:
+            - Hernández Ruiz Rafael
+	    - Maya Rocha Luis Emmanuel
+	    - Rivas Rojas Arturo
+    Fecha: 18 de Mayo de 2017               Versión: 3.1
+*/
 #include<stdio.h>
 #include <stdlib.h>
-#include<string.h>
+#include<string.h> //Biblioteca usada para operaciones con cadenas
 #include <time.h>
 #include "TADLista.h"
 #include "presentacion.h"
-#include <locale.h>
 
-int colisiones;  //contador de colisiones
+int colisiones;  //contador de colisiones, variable global, se requiere en todas las funciones y causa problemas si esta como local en una sola.
 
-
-void acentos (char palabra[50])  //funcion para guardar y buscar las palabras con acento
+void acentos (char palabra[50])  //funciòn para guardar y buscar las palabras con acento
 {
 	int n=0;
-	while(n<strlen(palabra))
+	while(n<strlen(palabra))  //Como se puede ver, se busca donde aparece un acento, de acuerdo a la codificaciòn de un archivo TXT,... 
 	{
-	if((int)palabra[n] == -15)
+	if((int)palabra[n] == -15) //... y luego se cambia la codificaciòn al ascii, para que pueda verse el acento en pantalla.
 	{
 	     palabra[n]=164; //ñ	
 		
@@ -81,19 +88,19 @@ int status_tab(int tabla[97]) //funcion para devolver el numero de campos vacios
 	int n=0;
 	 int vacio=0;
 	 
-	while(n<97)
+	while(n<97)  //Hacemos recorrido por tabla "de claves"
 	{
 	
 		if(tabla[n]== -1)
 		{
-			vacio=vacio+1;
+			vacio=vacio+1; //aumentamos uno al contador vacio cada vez que un campo de la tabla aparezca vacio.
 		}
 		n=n+1;
 	}
 	return vacio;
 }
-int convertir_asc(char palabra[50]) //funcion para obtener la suma del valor ascii de las letras de la palabra  
-{
+int convertir_asc(char palabra[50]) //funciòn para obtener la suma del valor ascii de las letras de la palabra  
+{         //Esta funciòn serà vital para el càlculo de la funciòn HASH.
 	
 	int n=0;
 	int valor=0;
@@ -101,43 +108,39 @@ int convertir_asc(char palabra[50]) //funcion para obtener la suma del valor asc
 	{
       
 		
-		valor=valor+(int)(palabra[n]);
+		valor=valor+(int)(palabra[n]); //Recordemos que se imprimirà el valor ascii de la palabra, por lo que se van sumando el de cada letra.
 		n=n+1;
 	}
 
 	return valor;
 }
 
-void separacion(char string[500] , char palabra[50], char definicion[500] , char valor) //funcion para separar el string en dos la palabra y la definicion y el char valor se agrega al comienzo
+void separacion(char string[500] , char palabra[50], char definicion[500] , char valor) //funcion para separar el string en dos la palabra y la definiciòn y el char valor se agrega al comienzo
 {
 	int n=0;
 	int j=0;
 		palabra[0]= valor;
 
-	while(string[n] != ':')
+	while(string[n] != ':')  //Nuestro anàlisis/separaciòn llega hasta los 2 puntos ":", separando asi la definiciòn de la palabra a buscar.
 	{
 
-		palabra[n+1]=string[n];
+		palabra[n+1]=string[n]; //Metemos la palabra al nuevo arreglo
 			
 		n=n+1;
 	}
 	n=n+1;
-	
+	/*^*/
 	while(string[n] != '\n')
 	{
 		
 		
-		definicion[j]=string[n];
+		definicion[j]=string[n];  //Metemos definiciòn al arreglo del mismo nombre
 		j=j+1;
 		n=n+1;
 	}
-	//definicion[j+1]='\0';
-	//printf("palabra: %s \n" , palabra);
-	//printf("definicion: %s \n" , definicion);
-	
 	
 }
-void rellenar(int tabla[97]) //relllena la tabla con -1
+void rellenar(int tabla[97]) //rellena la tabla con -1
 {
 	
 	int n=0;
