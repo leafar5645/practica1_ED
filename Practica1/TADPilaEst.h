@@ -18,7 +18,7 @@ antes de la ejecuciÃ³n del programa.
 	      - Hernández Ruiz Rafael
 	      - Maya Rocha Luis Emmanuel
 	      - Rivas Rojas Arturo
-	    Fecha de uso por el equipo: 18 de Mayo de 2017              
+	    Fecha de uso por el equipo: Abril de 2017              
 
 */
 
