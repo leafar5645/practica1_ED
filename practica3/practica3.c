@@ -557,7 +557,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 	}
 	else
 	{
-		p=First(&diccionario[n]);
+		p=First(&diccionario[n]);   //Si hay campos no vacios, se busca a la hermana en las distintas posiciones en las que se puede encontrar en un "ajedreZ"
 		while(p != 0)
 		{ 
 	    pasos=pasos+1;
@@ -619,7 +619,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 			}
 		}
 	}
-		memset(palabra, 0, 50);
+		memset(palabra, 0, 50); //Recordemos que con memset, se limpian los arreglos y buffers para que no sucedan problemas con datos personales. 
 		memset(a.palabra, 0, 50);
 		memset(a.definicion, 0, 500);
 		memset(definicion, 0, 500);//limpiamos el buffer para no mandar cosas demas
@@ -637,7 +637,7 @@ while ((valor = fgetc(dic)) != '^') //sacaremos todo del archivo hasta encontrar
 	
 	
 
-BorrarPantalla();
+BorrarPantalla();  //Cuàndo se decida terminar el programa, se limpiarà pantalla y se mostrarà el mensaje "adios".
    }
    printf("adios \n");
 	return 0;
