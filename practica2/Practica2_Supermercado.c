@@ -1,5 +1,4 @@
 /*  Título: Practica2_Supermercado.c
-   Descripción: funciones que en conjunto realizan una simulaciòn de un supermercado.
     Autor: Equipo 932
     Integrantes:
             - Hernández Ruiz Rafael
