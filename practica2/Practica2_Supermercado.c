@@ -7,8 +7,7 @@
     Fecha: 1 de junio de 2017               Versión: 1.5
 */
 #include "TADColaEst.h"
-//#include "TADColaEstCirc.h"
-//#include "TADColaDin.h"
+//#include "TADColaDin.h"  //Se pondrà este include cuando querramos trabajar con memoria dinàmica
 #include <stdlib.h>
 
 /* Funciòn principal, opera las colas, haciendo la simulacion de un mercado: en cada cola o caja, van llegando clientes que son atendidos en un tiempo establecido por caja, al tener màs de 100 clientes atendidos y las cajas vacias, el programa se termina. 
